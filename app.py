@@ -373,7 +373,26 @@ if st.session_state.submitted:
         st.markdown("• **Estimated Digital Share-of-Voice (SOV) Slip:** `Drop 14% YoY due to National Bidding Pods`" if "city" in clean_url or "furniture" in clean_url else "• **Estimated Digital Share-of-Voice (SOV) Slip:** `Drop 22% YoY vs Venture-Backed Competitors`")
         
     st.markdown("</div>", unsafe_allow_html=True)
+
+        # NEW ELEMENT: Dark Funnel blind-spot visualization framework
+    st.markdown("<div class='section-box' style='border-left: 5px solid #7C3AED;'>", unsafe_allow_html=True)
+    st.markdown("### 🔮 Elvex Dark Funnel Visibility Matrix")
+    st.caption("Analyzing unmeasurable consumer discovery channels bypassing standard attribution pixels.")
     
+    df_col1, df_col2 = st.columns(2)
+    with df_col1:
+        st.markdown("#### 🚫 Current Digital Attribution Blind-Spots")
+        st.markdown("• **Dark Social Leakage:** `Estimated 68% of sectional research happens on untracked messaging apps (Slack/WhatsApp).`" if "city" in clean_url or "furniture" in clean_url else "• **Dark Social Leakage:** `Estimated 74% of mattress review link sharing happens via dark messaging nodes.`")
+        st.markdown("• **Last-Click Fallacy Index:** `High. Analytics tools misattribute offline brand-equity loops directly to organic search or direct web traffic keywords.`")
+        st.markdown("• **Unmeasured Touchpoints:** `Podcasts, community recommendations, and video impressions are completely hidden from current dashboard view graphs.`")
+        
+    with df_col2:
+        st.markdown("#### 💡 The Broadcast Attribution Fix")
+        st.markdown("• **Blended MER Tracking Optimization:** `Capturing aggregate revenue lift patterns across the total advertising pipeline.`")
+        st.markdown("• **Post-Air Organic Spike Correlation:** `Mapping baseline web navigation surges within an 8-minute window of broadcast ad exposures.`")
+        st.markdown("• **Unified Brand Insulation Index:** `Using broadcast weight to build stable consumer demand outside of volatile digital auctions.`")
+    st.markdown("</div>", unsafe_allow_html=True)
+
     # 2. Strategy & Pitch Text Blocks
     st.markdown("### 🎯 Consultative Account Strategy")
     st.info(f"**The Valid Business Reason (VBR):**\n\n{data['vbr_statement']}")

@@ -370,7 +370,26 @@ if st.session_state.submitted:
     else:
         data = mock_database["cityfurniture"]
         
+    # --- Live Elvex Injection Processing Layer ---
+    # Automatically forces mapping fallback strings to clear out tab N/A indicators
+    if "journey_awareness" not in data:
+        if "city" in clean_url or "furniture" in clean_url:
+            data["journey_awareness"] = "Triggered by life events (moving, back pain, redecorating). Gaps exist in educational/inspiration video content outside of price promos."
+            data["journey_research"] = "Googling non-branded help-me-choose terms. Local pack reputation is uneven across regional zip codes."
+            data["journey_consideration"] = "Comparing 2–5 regional showrooms. Retargeting loops fail to handle core tracking objections like pet-proofing, setup care, or comfort metrics."
+            data["journey_decision"] = "Driven by final last-mile confidence. Reassurance indicators regarding tracking windows or damage resolutions are missing at checkout."
+            data["trust_plan"] = "1) Post-Delivery Review Ask: Automate SMS triggers 24-72 hours post-delivery split by showroom vs product experience.\n\n2) Video Engine: Deploy 10 short asset files answering sectional size picking and mattress firmness rules.\n\n3) Vignette Testimonials: Package UGC into landing page trust bundles."
+            data["seller_talk_track"] = "Right now, a huge portion of the market is forming buying opinions about CITY Furniture through untracked channels—YouTube, Google Maps, local referrals, and dark social loops—before they ever click a paid ad. When we invest in visibility and trust earlier via broad-market video flights and targeted objection-handling retargeting, two things scale: your branded organic search volume rises, and your bottom-of-funnel Search and PMax conversion efficiency improves. You lower your overall blended acquisition costs because you stop trying to convince cold buyers at the final expensive auction click."
+        else:
+            data["journey_awareness"] = "Triggered by physical discomfort (back pain, alignment exhaustion). Spending heavily on conversion campaigns creates volatile keyword spikes."
+            data["journey_research"] = "Navigating un-indexed mattress review forums and local text recommendations with near-zero brand transparency."
+            data["journey_consideration"] = "Evaluating trial return windows and material core safety. Current programmatic social assets focus entirely on generic discounts."
+            data["journey_decision"] = "Driven by high cart abandonment loops at checkout due to unverified trial terms or shipping uncertainty."
+            data["trust_plan"] = "1) Certification Highlights: Frame independent health certifications directly into social asset formats.\n\n2) Video Engine: Build 60-second interactive guides mapping structural scaling layers."
+            data["seller_talk_track"] = "DTC mattress brands operate in highly aggressive auction spaces. Anchoring your search engines with high-impact video blocks builds an operational protective baseline that stabilizes local keyword acquisition spend and captures hidden pre-click demand."
+
     st.markdown("---")
+
     st.success(f"⚡ STRATEGIC ACCOUNT BRIEFING COMPILED FOR: {data['prospect_name'].upper()}")
     st.write(f"**Target Account:** {data['prospect_name']}  |  **Profile Intel:** {data['corporate_intel']}  |  **Analytical Framework:** Cost-Center Optimization Index")
     

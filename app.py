@@ -189,7 +189,8 @@ mock_database = {
 }
 
 # Smart Input Matching Logic
-clean_url = prospect_url.lower()
+    # Clean up the input string to match keywords anywhere in the typed text
+    clean_url = prospect_url.lower()
     
     if "city" in clean_url or "furniture" in clean_url:
         data = mock_database["cityfurniture"]

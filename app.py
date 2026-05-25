@@ -403,15 +403,15 @@ if st.session_state.submitted:
         st.markdown("• **SSL Security Framework:** `TLS 1.3 Certified (Secure Checkout Flow)`")
         st.markdown("• **Cross-Channel Integration Anchor:** `Elvex Flow API Payload Sync Complete`")
         
-    with col_sig2:
+        with col_sig2:
         st.markdown("#### 📉 Strategic Gaps & Market Pressures")
         st.markdown(f"⚠️ **Market Share Erosion Threat:** {data['competitive_threat']}")
         st.markdown(f"💡 **Creative Asset Gap:** {data['creative_gap']}")
         st.markdown("• **Estimated Digital Share-of-Voice (SOV) Slip:** `Drop 14% YoY due to National Bidding Pods`" if "city" in clean_url or "furniture" in clean_url else "• **Estimated Digital Share-of-Voice (SOV) Slip:** `Drop 22% YoY vs Venture-Backed Competitors`")
         
     st.markdown("</div>", unsafe_allow_html=True)
-
-        # NEW ELEMENT: Dark Funnel blind-spot visualization framework
+    
+    # NEW ELEMENT: Dark Funnel blind-spot visualization framework
     st.markdown("<div class='section-box' style='border-left: 5px solid #7C3AED;'>", unsafe_allow_html=True)
     st.markdown("### 🔮 Elvex Dark Funnel Visibility Matrix")
     st.caption("Analyzing unmeasurable consumer discovery channels bypassing standard attribution pixels.")
@@ -428,7 +428,9 @@ if st.session_state.submitted:
         st.markdown("• **Blended MER Tracking Optimization:** `Capturing aggregate revenue lift patterns across the total advertising pipeline.`")
         st.markdown("• **Post-Air Organic Spike Correlation:** `Mapping baseline web navigation surges within an 8-minute window of broadcast ad exposures.`")
         st.markdown("• **Unified Brand Insulation Index:** `Using broadcast weight to build stable consumer demand outside of volatile digital auctions.`")
+        
     st.markdown("</div>", unsafe_allow_html=True)
+
 
         # 2. Strategy & Pitch Text Blocks (Upgraded to multi-tabbed research suite)
     st.markdown("### 🎯 Consultative Account Strategy & Deep Audit Suite")

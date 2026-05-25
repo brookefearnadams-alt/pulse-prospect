@@ -20,15 +20,13 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Helper function to generate deep, multi-data PowerPoint presentation arrays
-# Helper function to generate deep, multi-data PowerPoint presentation arrays (No Email, Max Intel)
-# Helper function to generate deep, multi-data PowerPoint presentation arrays (No Email, Max Intel)
 # Helper function to generate deep, multi-data PowerPoint presentation arrays (No Email, Max Intel)
 def create_pptx_deck(data, clean_url):
     prs = Presentation()
     prs.slide_width = Inches(13.333)
     prs.slide_height = Inches(7.5)
-    blank_layout = prs.slide_layouts[6] # Safely forces a completely clean layout sheet
+    # Using slide layout index 6 for a clean blank canvas layout slate
+    blank_layout = prs.slide_layouts[6]
     
     # ----------------------------------------------------
     # SLIDE 1: Enterprise Data Scrape & Signal Matrix
@@ -142,14 +140,13 @@ def create_pptx_deck(data, clean_url):
     lp4_b.font.size = Pt(11)
     lp4_b.font.color.rgb = RGBColor(55, 65, 81)
     
-        # Right Column Container - Multi-Platform Content Pillars (Tightened Vertically)
+    # Right Column Container - Multi-Platform Content Pillars (Tightened Vertically)
     rightBox = slide_2.shapes.add_textbox(Inches(6.8), Inches(1.4), Inches(6.0), Inches(5.6))
     rtf = rightBox.text_frame
     rtf.word_wrap = True
     
     rp1 = rtf.paragraphs[0]
     rp1.text = "🎯 Executive Framework Pillars"
-
     rp1.font.size = Pt(18)
     rp1.font.bold = True
     rp1.font.color.rgb = RGBColor(30, 58, 138)
@@ -168,7 +165,7 @@ def create_pptx_deck(data, clean_url):
         p_sub.font.size = Pt(10)
         p_sub.font.color.rgb = RGBColor(55, 65, 81)
         p_sub.space_after = Pt(2)
-    p_sub.space_after = Pt(8) # Space cushion below the complete bullet cluster
+    p_sub.space_after = Pt(8)
         
     # Pillar 2
     rp3 = rtf.add_paragraph()
@@ -183,7 +180,7 @@ def create_pptx_deck(data, clean_url):
         p_sub.font.size = Pt(10)
         p_sub.font.color.rgb = RGBColor(55, 65, 81)
         p_sub.space_after = Pt(2)
-    p_sub.space_after = Pt(8) # Space cushion below the complete bullet cluster
+    p_sub.space_after = Pt(8)
         
     # Pillar 3
     rp4 = rtf.add_paragraph()
@@ -198,9 +195,11 @@ def create_pptx_deck(data, clean_url):
         p_sub.font.size = Pt(10)
         p_sub.font.color.rgb = RGBColor(55, 65, 81)
         p_sub.space_after = Pt(2)
-
-
-
+        
+    binary_output = io.BytesIO()
+    prs.save(binary_output)
+    binary_output.seek(0)
+    return binary_output
 
 # Top Header Layout
 st.markdown("<p class='main-title'>📡 OMNIPULSE AI</p>", unsafe_allow_html=True)

@@ -411,11 +411,12 @@ if st.session_state.submitted:
         
     st.markdown("</div>", unsafe_allow_html=True)
     
-    # NEW ELEMENT: Dark Funnel blind-spot visualization framework
+    # NEW ELEMENT: Elvex Dark Funnel Visibility Matrix (Fully Expanded Research Suite)
     st.markdown("<div class='section-box' style='border-left: 5px solid #7C3AED;'>", unsafe_allow_html=True)
     st.markdown("### 🔮 Elvex Dark Funnel Visibility Matrix")
     st.caption("Analyzing unmeasurable consumer discovery channels bypassing standard attribution pixels.")
     
+    # Macro Status Indicators
     df_col1, df_col2 = st.columns(2)
     with df_col1:
         st.markdown("#### 🚫 Current Digital Attribution Blind-Spots")
@@ -429,7 +430,37 @@ if st.session_state.submitted:
         st.markdown("• **Post-Air Organic Spike Correlation:** `Mapping baseline web navigation surges within an 8-minute window of broadcast ad exposures.`")
         st.markdown("• **Unified Brand Insulation Index:** `Using broadcast weight to build stable consumer demand outside of volatile digital auctions.`")
         
+    st.markdown("---")
+    
+    # Deep-Dive Dark Funnel Research Sub-Panels
+    st.markdown("#### 🛋️ Deep Audit Discovery: CITY Furniture Segment Data" if "city" in clean_url or "furniture" in clean_url else "#### 🛏️ Deep Audit Discovery: EcoRest Bedding Segment Data")
+    
+    sub_col1, sub_col2 = st.columns(2)
+    with sub_col1:
+        st.markdown("##### 📈 Strategic Market Strengths")
+        st.write("• **Brand Visibility (Local Familiarity Index):** High baseline recognition due to physical showroom footprint and ongoing promo cycles. Crucial because furniture purchases are infrequent and consumers default to names they recognize.")
+        st.write("• **Search Presence Authority:** Strong branded search volumes ('City Furniture near me') alongside high-intent category phrases (sectional, sofa, bedroom set).")
+        st.write("• **Trust Signals Baseline:** Benefits from perceived legitimacy metrics: delivery capability, physical footprint, financing ease, and warranties.")
+        
+        st.markdown("##### 🛒 4-Stage Strategic Customer Journey")
+        st.write("**1. Awareness:** Triggered by life events (moving, back pain, redecorating). Gaps exist in educational/inspiration video content outside of price promos.")
+        st.write("**2. Research:** Googling non-branded help-me-choose terms. Local pack reputation is uneven across regional zip codes.")
+        st.write("**3. Consideration:** Comparing 2–5 regional showrooms. Retargeting loops fail to handle core tracking objections like pet-proofing, setup care, or comfort metrics.")
+        st.write("**4. Decision:** Driven by final last-mile confidence. Reassurance indicators regarding tracking windows or damage resolutions are missing at checkout.")
+        
+    with sub_col2:
+        st.markdown("##### 📉 Identified Operational Leaks & Gaps")
+        st.write("• **Mid-Funnel Content Deficit:** Web assets over-index on product grids but heavily leak traffic on research queries like sectional sizing guides, performance fabric comparisons, and room-planning software.")
+        st.write("• **Review Asset Under-Utilization:** Location reviews exist across individual local showrooms but are completely un-packaged into digital ad creative hooks, testimonial reels, or dedicated landing pages.")
+        st.write("• **Word-of-Mouth Capture Failure:** Zero systematic triggers or post-delivery referral requests deployed inside the critical 24–72 hour customer satisfaction window.")
+        
+        st.markdown("##### 🏆 Recommended Strategic Interventions")
+        st.write("• **YouTube/CTV 'Familiarity' Flight:** Re-establishing upper-funnel baseline equity outside platform auction loops to lower search costs by 24%.")
+        st.write("• **Objection-Handling Retargeting Module:** Shifting programmatic assets away from raw discounts to resolve uncertainties about last-mile setups, financing, or durability.")
+        st.write("• **Local SEO Reputation Optimization:** Executing systematic store-level reputation updates to clean up Map Pack trust scores across regional territories.")
+        
     st.markdown("</div>", unsafe_allow_html=True)
+
 
 
         # 2. Strategy & Pitch Text Blocks (Upgraded to multi-tabbed research suite)

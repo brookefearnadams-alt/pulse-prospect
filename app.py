@@ -436,10 +436,50 @@ if st.session_state.submitted:
         st.markdown("• **Unified Brand Insulation Index:** `Using broadcast weight to build stable consumer demand outside of volatile digital auctions.`")
     st.markdown("</div>", unsafe_allow_html=True)
 
-    # 2. Strategy & Pitch Text Blocks
-    st.markdown("### 🎯 Consultative Account Strategy")
-    st.info(f"**The Valid Business Reason (VBR):**\n\n{data['vbr_statement']}")
-    st.error(f"**Identified Operational Inefficiency:**\n\n{data['vulnerability']}")
+        # 2. Strategy & Pitch Text Blocks (Upgraded to multi-tabbed research suite)
+    st.markdown("### 🎯 Consultative Account Strategy & Deep Audit Suite")
+    
+    # Draw native interactive tab headers across your center UI pane
+    tab_core, tab_journey, tab_trust, tab_tracks = st.tabs([
+        "📊 Core Strategy Brief", 
+        "🔮 Customer Journey Audit", 
+        "🛠️ Trust-Building Plan", 
+        "🎙️ Seller Talk Tracks"
+    ])
+    
+    with tab_core:
+        st.info(f"**The Valid Business Reason (VBR):**\n\n{data['vbr_statement']}")
+        st.error(f"**Identified Operational Inefficiency:**\n\n{data['vulnerability']}")
+        if "dark_funnel_summary" in data:
+            st.warning(f"**Dark Funnel Strategic Summary:**\n\n{data['dark_funnel_summary']}")
+            
+    with tab_journey:
+        st.markdown("#### 🛒 4-Stage Customer Journey Breakdown & Tracking Gaps")
+        st.caption("Surfacing hidden pre-click discovery leaks where standard conversion tracking pixels are blind.")
+        
+        st.markdown(f"**1. Awareness Phase (Trigger Realization):**\n*{data.get('journey_awareness', 'N/A')}*")
+        st.markdown("---")
+        st.markdown(f"**2. Research Phase (Non-Branded Discovery):**\n*{data.get('journey_research', 'N/A')}*")
+        st.markdown("---")
+        st.markdown(f"**3. Consideration Phase (Objection Comparison):**\n*{data.get('journey_consideration', 'N/A')}*")
+        st.markdown("---")
+        st.markdown(f"**4. Decision Phase (Last-Mile Reassurance):**\n*{data.get('journey_decision', 'N/A')}*")
+        
+    with tab_trust:
+        st.markdown("#### 🛡️ Omni-Channel Brand Trust Optimization Plan")
+        if "trust_plan" in data:
+            st.success(data['trust_plan'])
+        else:
+            st.info("General trust framework applied.")
+            
+    with tab_tracks:
+        st.markdown("#### 📢 Consultative C-Suite Seller Talk Tracks")
+        if "seller_talk_track" in data:
+            st.write(data['seller_talk_track'])
+            st.caption("💡 * AE Strategy Pitch Tip: Deliver this tracking context directly to the CFO/CMO to position broadcast media as an efficiency multiplier for their active digital spend.*")
+        else:
+            st.write("Standard consultative positioning tracks loaded.")
+
     
     # 3. Outreach Copy Block
     st.markdown("### 📨 Automated Executive Outreach Script")

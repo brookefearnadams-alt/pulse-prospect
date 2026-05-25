@@ -15,7 +15,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Corporate Header Top Bar
-col_logo, col_text = st.columns()
+col_logo, col_text = st.columns(2)
 with col_logo:
     st.markdown("<h1 style='font-size: 50px; margin: 0;'>📡</h1>", unsafe_allow_html=True)
 with col_text:

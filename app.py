@@ -154,6 +154,7 @@ mock_database = {
             "The Allocation Reset: Diversifying capital allocations into a structured mix of 50% broad-market authority, 30% targeted streaming, and 20% premium digital integrations.",
             "Attribution Alignment: Measuring success via enterprise web baseline traffic lifts and total blended marketing efficiency ratios (MER) rather than isolated click-through tracking.",
             "Strategic Next Step: A 10-minute executive alignment meeting to review local market cost-insulation test zones."
+          ],
     },
     "ecorest": {
         "prospect_name": "EcoRest Bedding",

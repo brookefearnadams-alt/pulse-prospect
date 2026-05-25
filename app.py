@@ -23,11 +23,12 @@ st.markdown("""
 # Helper function to generate deep, multi-data PowerPoint presentation arrays
 # Helper function to generate deep, multi-data PowerPoint presentation arrays (No Email, Max Intel)
 # Helper function to generate deep, multi-data PowerPoint presentation arrays (No Email, Max Intel)
+# Helper function to generate deep, multi-data PowerPoint presentation arrays (No Email, Max Intel)
 def create_pptx_deck(data, clean_url):
     prs = Presentation()
     prs.slide_width = Inches(13.333)
     prs.slide_height = Inches(7.5)
-    blank_layout = prs.slide_layouts[6] # Forces a completely clean slide template canvas
+    blank_layout = prs.slide_layouts[6] # Safely forces a completely clean layout sheet
     
     # ----------------------------------------------------
     # SLIDE 1: Enterprise Data Scrape & Signal Matrix
@@ -69,14 +70,14 @@ def create_pptx_deck(data, clean_url):
         for col_idx, cell_text in enumerate(row_content):
             cell = table.cell(row_idx, col_idx)
             cell.text = cell_text
-            p = cell.text_frame.paragraphs[0] # Grab the specific paragraph element inside the array
+            p = cell.text_frame.paragraphs[0]
             p.font.size = Pt(12)
             p.font.color.rgb = RGBColor(55, 65, 81)
             if col_idx == 0:
                 p.font.bold = True
                 p.font.color.rgb = RGBColor(30, 58, 138)
                 
-      # ----------------------------------------------------
+    # ----------------------------------------------------
     # SLIDE 2: Consultative Strategic Action Briefing (NO OUTREACH - MAX DATA)
     # ----------------------------------------------------
     slide_2 = prs.slides.add_slide(blank_layout)
@@ -106,42 +107,36 @@ def create_pptx_deck(data, clean_url):
     lp1.font.color.rgb = RGBColor(30, 58, 138)
     lp1.space_after = Pt(14)
     
-    # Target Cost-Center Framework Header
     lp2_h = ltf.add_paragraph()
     lp2_h.text = "• Target Cost-Center Optimization Framework:"
     lp2_h.font.size = Pt(13)
     lp2_h.font.bold = True
     lp2_h.font.color.rgb = RGBColor(30, 58, 138)
     
-    # Target Cost-Center Framework Body
     lp2_b = ltf.add_paragraph()
     lp2_b.text = data['vbr_statement']
     lp2_b.font.size = Pt(11)
     lp2_b.font.color.rgb = RGBColor(55, 65, 81)
     lp2_b.space_after = Pt(14)
     
-    # Identified Capital Allocation Leak Header
     lp3_h = ltf.add_paragraph()
     lp3_h.text = "• Identified Capital Allocation Leak:"
     lp3_h.font.size = Pt(13)
     lp3_h.font.bold = True
     lp3_h.font.color.rgb = RGBColor(30, 58, 138)
     
-    # Identified Capital Allocation Leak Body
     lp3_b = ltf.add_paragraph()
     lp3_b.text = data['vulnerability']
     lp3_b.font.size = Pt(11)
     lp3_b.font.color.rgb = RGBColor(55, 65, 81)
     lp3_b.space_after = Pt(14)
     
-    # Proposed Marketing Capital Mix Header
     lp4_h = ltf.add_paragraph()
     lp4_h.text = "• Proposed Marketing Capital Mix Reallocation:"
     lp4_h.font.size = Pt(13)
     lp4_h.font.bold = True
     lp4_h.font.color.rgb = RGBColor(30, 58, 138)
     
-    # Proposed Marketing Capital Mix Body
     lp4_b = ltf.add_paragraph()
     lp4_b.text = data['recommended_mix']
     lp4_b.font.size = Pt(11)
@@ -174,7 +169,7 @@ def create_pptx_deck(data, clean_url):
         
     # Pillar 2
     rp3 = rtf.add_paragraph()
-    rp3.text = "\n2. Cross-Platform Portfolio Multipliers"
+    rp3.text = "2. Cross-Platform Portfolio Multipliers"
     rp3.font.bold = True
     rp3.font.size = Pt(13)
     rp3.font.color.rgb = RGBColor(30, 58, 138)
@@ -187,7 +182,7 @@ def create_pptx_deck(data, clean_url):
         
     # Pillar 3
     rp4 = rtf.add_paragraph()
-    rp4.text = "\n3. Efficiency Blueprint & Test-Zone Targets"
+    rp4.text = "3. Efficiency Blueprint & Test-Zone Targets"
     rp4.font.bold = True
     rp4.font.size = Pt(13)
     rp4.font.color.rgb = RGBColor(30, 58, 138)
@@ -196,6 +191,12 @@ def create_pptx_deck(data, clean_url):
         p_sub.text = f"   - {b}"
         p_sub.font.size = Pt(10)
         p_sub.font.color.rgb = RGBColor(55, 65, 81)
+        
+    binary_output = io.BytesIO()
+    prs.save(binary_output)
+    binary_output.seek(0)
+    return binary_output
+
 
 
 # Top Header Layout

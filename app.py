@@ -147,8 +147,9 @@ def create_pptx_deck(data, clean_url):
     rtf = rightBox.text_frame
     rtf.word_wrap = True
     
-    rp1 = rtf.paragraphs
+    rp1 = rtf.paragraphs[0]
     rp1.text = "🎯 Executive Framework Pillars"
+
     rp1.font.size = Pt(18)
     rp1.font.bold = True
     rp1.font.color.rgb = RGBColor(30, 58, 138)

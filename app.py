@@ -189,7 +189,7 @@ mock_database = {
 }
 
 # Smart Input Matching Logic
-    clean_url = prospect_url.lower()
+clean_url = prospect_url.lower()
     
     if "city" in clean_url or "furniture" in clean_url:
         data = mock_database["cityfurniture"]

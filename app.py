@@ -232,7 +232,7 @@ if st.session_state.submitted:
     # 4. Presentation Slides Content Header with Real PPTX Downloader
     st.markdown("---")
     
-    dl_col1, dl_col2 = st.columns()
+    dl_col1, dl_col2 = st.columns(2)
     with dl_col1:
         st.markdown("### 📊 Executive Presentation Content Architecture")
         st.write(f"**Proposed Marketing Capital Reallocation Mix:** {data['recommended_mix']}")

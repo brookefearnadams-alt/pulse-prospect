@@ -1,95 +1,119 @@
 import streamlit as st
 import time
 
-st.set_page_config(layout="wide", page_title="PulseProspect AI", page_icon="⚡")
+# Page configuration with broad layouts
+st.set_page_config(layout="wide", page_title="OmniPulse AI", page_icon="📡")
 
-# App Header
-st.title("⚡ PulseProspect AI — Grounded Sales Agent")
-st.caption("Bypassing Agency Avails with Data-Backed, Consultative Prospecting")
-st.markdown("---")
+# Custom Media Company Header & Corporate Branding Style
+st.markdown("""
+    <style>
+    .main-title { font-size: 40px !important; font-weight: 800; color: #1E3A8A; margin-bottom: 0px; }
+    .subtitle { font-size: 16px !important; color: #4B5563; margin-bottom: 25px; font-style: italic; }
+    .metric-card { background-color: #F3F4F6; padding: 15px; border-radius: 8px; border-left: 5px solid #2563EB; }
+    .data-pill { background-color: #EFF6FF; padding: 12px; border-radius: 6px; border: 1px solid #BFDBFE; margin-bottom: 10px; }
+    </style>
+""", unsafe_allow_html=True)
 
-# User Input Section
-col_in, _ = st.columns([2, 1])
-with col_in:
-    prospect_url = st.text_input(
-        "Enter Prospect Website URL:", 
-        value="://ecorestbedding.com", 
-        help="Type any URL to simulate the AI diagnostic scan."
-    )
-    submit_button = st.button("Run Autonomous Diagnostic", type="primary")
+# Corporate Header Top Bar
+col_logo, col_text = st.columns()
+with col_logo:
+    st.markdown("<h1 style='font-size: 50px; margin: 0;'>📡</h1>", unsafe_allow_html=True)
+with col_text:
+    st.markdown("<p class='main-title'>OMNIPULSE AI</p>", unsafe_allow_html=True)
+    st.markdown("<p class='subtitle'>The Official Media Sales Intelligence Platform — Powered by Enterprise Data & Elvex Flows</p>", unsafe_allow_html=True)
 
-# Fake Data Database to simulate real AI processing based on input
+# Enterprise System Status Indicators
+st.sidebar.markdown("### 🖥️ System Status")
+st.sidebar.success("● Core Engine: Connected")
+st.sidebar.success("● Elvex Knowledge Base: Active")
+st.sidebar.info("● Core Database: 2026 Linear + Digital Metrics")
+st.sidebar.markdown("---")
+st.sidebar.markdown("### 💡 Hackathon Demo Note")
+st.sidebar.write("Type **'ecorest'** in the URL box to trigger the premium bedding client analysis. Type any other URL for the general retail scenario.")
+
+# Live Market Performance Tickers
+t1, t2, t3, t4 = st.columns(4)
+with t1:
+    st.metric(label="Average Cross-Platform CPA Lift", value="-24%", delta="Optimized")
+with t2:
+    st.metric(label="Direct-to-Client Revenue Capture", value="+31%", delta="Net New")
+with t3:
+    st.metric(label="Agency RFPs Bypassed This Month", value="142", delta="Velocity")
+with t4:
+    st.metric(label="Average Pitch Creation Time", value="12 Sec", delta="-98%")
+
+st.markdown("###")
+
+# Main Interface Entry Section
+st.markdown("### 🔍 Deep Web Scrape & Local Media Diagnostic")
+prospect_url = st.text_input(
+    "Input Target Prospect Website URL (e.g., ://ecorestbedding.com):", 
+    value="://ecorestbedding.com"
+)
+submit_button = st.button("Generate Deep Intelligence Briefing", type="primary")
+
+# Enriched Database with Heavy Media Data Points
 mock_database = {
     "ecorest": {
         "prospect_name": "EcoRest Bedding",
-        "vulnerability": "Heavy reliance on Meta and Google Ads is causing a 38% YoY inflation in their Digital Customer Acquisition Costs (CAC), squeezing margins on their organic latex mattress line.",
-        "vbr_statement": "According to our internal data, local DTC brands that anchor active digital campaigns with a high-impact Linear TV daytime flight experience an average 24% reduction in overall Digital CAC via a 15% surge in high-intent organic brand searches.",
+        "vertical": "DTC Home Goods / Premium Mattress",
+        "estimated_digital_monthly": "\$45,000 - \$60,000",
+        "meta_ad_count": "34 Active Creative Variations",
+        "google_ad_types": "Performance Max (Heavy Search & Shopping focus)",
+        "pixel_detections": ["Meta Pixel (Custom Conversions)", "Google Tag Manager", "TikTok Pixel", "Klaviyo Tracking"],
+        "creative_gap": "Over-indexing on text-heavy testimonial static ads. Complete absence of high-production video storytelling or lifestyle video formats to build brand equity.",
+        "competitive_threat": "Casper and Purple Mattresses are currently running localized geotargeted digital conquests in this market, outbidding EcoRest for the keyword 'organic latex mattress' by 42%.",
+        "vulnerability": "Heavy reliance on Meta and Google Ads is causing a 38% YoY inflation in their Digital Customer Acquisition Costs (CAC), severely squeezing net margins on their organic latex mattress line.",
+        "vbr_statement": "Internal campaign data proves that local DTC brands anchoring active digital campaigns with a high-impact Linear TV daytime flight experience an average 24% reduction in overall Digital CAC via a 15% surge in high-intent organic brand searches.",
+        "recommended_mix": "60% Daytime Linear (Homeowner index) | 20% Connected TV (CTV) Retargeting | 20% Localized Digital News Takeovers",
         "email_subject": "Optimizing EcoRest's digital acquisition efficiency by 24%",
-        "email_body": "Hi Team EcoRest,\n\nI’ve been tracking your impressive digital presence for your organic latex mattress line. However, running a digital-only acquisition strategy right now means you are fighting rising CPMs on Meta and Google.\n\nOur data shows that local DTC brands pairing their active digital campaigns with strategic daytime Linear TV see an average 24% drop in digital CAC. This is driven by a 15% surge in direct, high-intent organic search volume from a 35-64 homeowner demographic that controls 80% of premium home-goods spend.\n\nI’ve put together a 3-slide efficiency blueprint showing how a low-risk daytime flight can stabilize your ad spend. Do you have 10 minutes this Thursday at 2 PM to review the data?\n\nBest,\n[Account Executive Name]",
-        "slide_1_bullets": ["Digital Fatigue: Meta/Google CPMs up 38% YoY.", "Squeezed Margins: High acquisition costs limiting mattress scale.", "Missed Demographic: High-intent 35-64 homeowners ignored."],
-        "slide_2_bullets": ["The Halo Effect: TV ad exposure drives immediate Google searches.", "CAC Reduction: Proven 24% decrease in digital acquisition costs.", "Trust Premium: Broadcast presence elevates digital brand authority."],
-        "slide_3_bullets": ["Daytime Focus: Low-cost, highly targeted morning/afternoon flights.", "Unified Lift: Measuring success via organic web traffic spikes.", "Zero Risk Setup: Retargeting TV-driven traffic via existing Meta pixels."]
+        "email_body": "Hi Team EcoRest,\n\nI’ve been tracking your impressive digital presence for your organic latex mattress line. Our intelligence engine flagged that you are currently managing 34 active creative variations on Meta, heavily leaning into Performance Max channels.\n\nWhile this captures baseline demand, running a digital-only acquisition strategy right now means you are highly exposed. Competitors like Casper are currently outbidding you by 42% locally on key search phrases, driving up your digital CAC by 38% YoY.\n\nOur cross-platform data shows that local brands pairing active digital with strategic daytime Linear TV see an average 24% drop in digital CAC. This builds a protective 'brand shield' around your search keywords.\n\nI’ve put together a 3-slide efficiency blueprint tailored to your active pixel profiles. Do you have 10 minutes this Thursday at 2 PM to review our data?\n\nBest,\n[Account Executive Name]",
+        "slide_1_bullets": ["Digital Inflation: EcoRest is absorbing a 38% YoY increase in Meta/Google acquisition costs.", "Keyword Conquesting: Competitors are outbidding EcoRest by 42% on high-intent local search phrases.", "Creative Bottleneck: 34 active Meta ads rely entirely on static testimonials, ignoring screen-based video storytelling."],
+        "slide_2_bullets": ["The Halo Effect: Daytime broadcast presence drives immediate mobile/desktop organic brand searches.", "CAC Reduction: Proven 24% decrease in digital acquisition costs by stabilizing competitive auction dependency.", "Audience Capture: Reaching premium 35-64 homeowners who own 80% of local premium home assets."],
+        "slide_3_bullets": ["Efficiency Mix: Deploying a 60% Daytime Linear flight paired with high-impact CTV retargeting.", "Pixel Sync: Utilizing existing Meta pixels to retarget consumers exposed to our local broadcast windows.", "Next Steps: Reviewing customized local zone maps on Thursday."]
     },
     "default": {
         "prospect_name": "Local Business Prospect",
-        "vulnerability": "Current digital tactics are trapped in a high-bid competition loop, resulting in diminishing returns on standard social media spend.",
+        "vertical": "General Commercial / Local Services",
+        "estimated_digital_monthly": "\$12,000 - \$18,000",
+        "meta_ad_count": "5 Active Creative Variations",
+        "google_ad_types": "Standard Local Search Text Ads",
+        "pixel_detections": ["Meta Pixel (Basic)", "Google Analytics 4"],
+        "creative_gap": "Limited asset utilization. Ads have not been refreshed in over 90 days, indicating severe creative fatigue and low engagement rates.",
+        "competitive_threat": "National franchises are saturating the local digital zip codes with automated, high-budget bidding loops that force local direct players into low-tier placements.",
+        "vulnerability": "Current digital tactics are trapped in a high-bid local competition loop, resulting in severe ad fatigue and diminishing conversion returns.",
         "vbr_statement": "Cross-platform data confirms that adding localized Linear TV tactics to active digital campaigns drops blended CPA by 18% and opens up untapped high-net-worth local demographics.",
+        "recommended_mix": "50% Early Fringe & Access Linear | 30% Streaming/OTT Local Geotargets | 20% Native Digital Banner Sponsorships",
         "email_subject": "Fixing digital ad fatigue and scaling local acquisition",
-        "email_body": "Hi Team,\n\nI noticed your recent local digital campaigns and wanted to share a quick piece of data. Relying strictly on hyper-targeted social feeds is exposing your brand to severe ad fatigue and rising competitive bids.\n\nOur historical campaign data shows that adding a foundation of localized television tactics drops blended digital CPA by 18%. It captures a highly stable, affluent local audience that bypasses digital ad-blockers entirely.\n\nI have a 3-slide strategy ready showing exactly how this multi-platform lift works for your industry. Do you have 10 minutes to connect this week?\n\nBest,\n[Account Executive Name]",
-        "slide_1_bullets": ["The Algorithmic Trap: Rising bids on social platforms.", "Audience Decay: Ad fatigue lowering digital click-through rates.", "The Blind Spot: Missing the offline, high-spending local market."],
-        "slide_2_bullets": ["The Multiplier: TV builds the broad market awareness digital needs.", "Efficiency Gain: Blended acquisition costs drop by 18%.", "Frequency Optimization: Touching the consumer across multiple screens."],
-        "slide_3_bullets": ["Tactical Mix: Affordable non-prime linear paired with local digital.", "Attribution: Tracking baseline traffic lift during broadcast windows.", "Next Steps: 10-minute strategy alignment call."]
+        "email_body": "Hi Team,\n\nI noticed your recent local digital campaigns and wanted to share a quick piece of market efficiency data. Our system detected that your digital creatives haven't been updated in 90 days, exposing your local brand to severe ad fatigue and rising competitive auction bids from national players.\n\nOur localized media campaign data shows that adding a foundation of broadcast television tactics drops blended digital CPA by 18%. It captures a highly stable, affluent local audience that bypasses digital ad-blockers entirely.\n\nI have a 3-slide strategy ready showing exactly how this multi-platform lift works for your industry. Do you have 10 minutes to connect this week?\n\nBest,\n[Account Executive Name]",
+        "slide_1_bullets": ["The Algorithmic Trap: National brands outbidding local services on core search keywords.", "Creative Fatigue: Active digital assets unrefreshed for 90+ days, dropping user click-through rates.", "The Blind Spot: Missing the offline, high-spending local market that controls local service spending."],
+        "slide_2_bullets": ["The Multiplier: Broadcast builds the market dominance and authority digital needs to convert.", "Efficiency Gain: Blended acquisition costs drop by 18% when multi-screen touchpoints are utilized.", "Frequency Optimization: Reaching the consumer across premium local television inventory."],
+        "slide_3_bullets": ["Tactical Mix: Affordable Early Fringe linear paired with high-impact localized digital sponsorships.", "Attribution: Tracking baseline traffic lift during broadcast flight windows.", "Next Steps: 10-minute strategy alignment call."]
     }
 }
 
-# Execution Logic
+# Run Screen Sequence
 if submit_button:
-    # 1. Create realistic looking loading sequence for the judges
-    with st.spinner("🕵️‍♂️ Step 1/3: AI Agent scraping website and identifying industry vertical..."):
-        time.sleep(1.5)
-    with st.spinner("🗄️ Step 2/3: Searching secure Elvex Datasources for matching attribution metrics..."):
+    with st.spinner("⚙️ Accessing Enterprise Scraper Node... Parsing Meta Ad Libraries & Tracking Pixels..."):
         time.sleep(1.2)
-    with st.spinner("⚡ Step 3/3: Generating structured JSON sales assets..."):
-        time.sleep(0.8)
+    with st.spinner("📊 Grounding insights with historical attribution databases..."):
+        time.sleep(1.0)
         
-    # 2. Select data based on what user typed
     clean_url = prospect_url.lower()
     if "ecorest" in clean_url or "bedding" in clean_url:
         data = mock_database["ecorest"]
     else:
         data = mock_database["default"]
         
-    st.success(f"🎯 Strategic Profile Successfully Generated for {data['prospect_name']}!")
+    st.markdown("---")
+    st.success(f"⚡ STRATEGIC PROFILE COMPILED FOR: {data['prospect_name'].upper()}")
+    
+    # Metadata Badges Block
+    b1, b2, b3 = st.columns(3)
+    b1.markdown(f"**Target Client:** `{data['prospect_name']}`")
+    b2.markdown(f"**Industry Vertical:** `{data['vertical']}`")
+    b3.markdown("**Confidence Score:** `98% (Data Grounded)`")
+    
     st.markdown("###")
     
-    # 3. Render Dashboard Interface
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.subheader("🎯 The Valid Business Reason (VBR)")
-        st.info(data['vbr_statement'])
-        st.warning(f"**Identified Vulnerability:** {data['vulnerability']}")
-        
-    with col2:
-        st.subheader("📨 Consultative Outbound Script")
-        st.text_input("Subject Line:", data['email_subject'])
-        st.text_area("Email Body:", data['email_body'], height=230)
-        
-    st.markdown("---")
-    st.subheader("📊 Exportable 3-Slide Pitch Presentation Content")
-    
-    s1, s2, s3 = st.columns(3)
-    with s1:
-        st.error("**SLIDE 1: The Digital Bottleneck**")
-        for bullet in data['slide_1_bullets']:
-            st.markdown(f"❌ {bullet}")
-            
-    with s2:
-        st.success("**SLIDE 2: The Multiplier Effect**")
-        for bullet in data['slide_2_bullets']:
-            st.markdown(f"📈 {bullet}")
-            
-    with s3:
-        st.info("**SLIDE 3: The Efficiency Blueprint**")
-        for bullet in data['slide_3_bullets']:
-            st.markdown(f"🛠️ {bullet}")
+    # --- NEW SCRAPED DATA INTELLIGENCE GRID ---

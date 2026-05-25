@@ -403,7 +403,7 @@ if st.session_state.submitted:
         st.markdown("• **SSL Security Framework:** `TLS 1.3 Certified (Secure Checkout Flow)`")
         st.markdown("• **Cross-Channel Integration Anchor:** `Elvex Flow API Payload Sync Complete`")
         
-        with col_sig2:
+    with col_sig2:
         st.markdown("#### 📉 Strategic Gaps & Market Pressures")
         st.markdown(f"⚠️ **Market Share Erosion Threat:** {data['competitive_threat']}")
         st.markdown(f"💡 **Creative Asset Gap:** {data['creative_gap']}")

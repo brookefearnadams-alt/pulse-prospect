@@ -22,14 +22,15 @@ st.markdown("""
 
 # Helper function to generate deep, multi-data PowerPoint presentation arrays
 # Helper function to generate deep, multi-data PowerPoint presentation arrays (No Email, Max Intel)
+# Helper function to generate deep, multi-data PowerPoint presentation arrays (No Email, Max Intel)
 def create_pptx_deck(data, clean_url):
     prs = Presentation()
     prs.slide_width = Inches(13.333)
     prs.slide_height = Inches(7.5)
-    blank_layout = prs.slide_layouts[6]
+    blank_layout = prs.slide_layouts[6] # Forces a completely clean slide template canvas
     
     # ----------------------------------------------------
-    # Enterprise Data Scrape & Signal Matrix
+    # SLIDE 1: Enterprise Data Scrape & Signal Matrix
     # ----------------------------------------------------
     slide_1 = prs.slides.add_slide(blank_layout)
     
@@ -42,13 +43,11 @@ def create_pptx_deck(data, clean_url):
     txBox_1 = slide_1.shapes.add_textbox(Inches(0.5), Inches(0.15), Inches(12.333), Inches(0.8))
     p1 = txBox_1.text_frame.paragraphs[0]
     p1.text = f"{data['prospect_name']} — Commercial Footprint & Signal Matrix"
-
-
     p1.font.size = Pt(26)
     p1.font.bold = True
     p1.font.color.rgb = RGBColor(255, 255, 255)
     
-    # Large Data Grid Table Shape (Rows: 7, Columns: 2)
+    # Add Large Data Grid Table Shape (Rows: 7, Columns: 2)
     table_shape = slide_1.shapes.add_table(7, 2, Inches(0.5), Inches(1.5), Inches(12.333), Inches(5.5))
     table = table_shape.table
     table.columns.width = Inches(3.5)
@@ -70,7 +69,7 @@ def create_pptx_deck(data, clean_url):
         for col_idx, cell_text in enumerate(row_content):
             cell = table.cell(row_idx, col_idx)
             cell.text = cell_text
-            p = cell.text_frame.paragraphs
+            p = cell.text_frame.paragraphs[0] # Grab the specific paragraph element inside the array
             p.font.size = Pt(12)
             p.font.color.rgb = RGBColor(55, 65, 81)
             if col_idx == 0:
@@ -78,7 +77,7 @@ def create_pptx_deck(data, clean_url):
                 p.font.color.rgb = RGBColor(30, 58, 138)
                 
     # ----------------------------------------------------
-    # Consultative Strategic Action Briefing (NO OUTREACH - MAX DATA)
+    # SLIDE 2: Consultative Strategic Action Briefing (NO OUTREACH - MAX DATA)
     # ----------------------------------------------------
     slide_2 = prs.slides.add_slide(blank_layout)
     
@@ -90,8 +89,7 @@ def create_pptx_deck(data, clean_url):
     
     txBox_2 = slide_2.shapes.add_textbox(Inches(0.5), Inches(0.15), Inches(12.333), Inches(0.8))
     p2 = txBox_2.text_frame.paragraphs[0]
-    p2.text = f"{data['prospect_name']} — Consultative Account Strategy"
-
+    p2.text = f"{data['prospect_name']} — Consultative Optimization Index"
     p2.font.size = Pt(26)
     p2.font.bold = True
     p2.font.color.rgb = RGBColor(255, 255, 255)
@@ -101,7 +99,7 @@ def create_pptx_deck(data, clean_url):
     ltf = leftBox.text_frame
     ltf.word_wrap = True
     
-    lp1 = ltf.paragraphs
+    lp1 = ltf.paragraphs[0]
     lp1.text = "📊 Operational Strategy & Allocation"
     lp1.font.size = Pt(18)
     lp1.font.bold = True
@@ -127,7 +125,7 @@ def create_pptx_deck(data, clean_url):
     rtf = rightBox.text_frame
     rtf.word_wrap = True
     
-    rp1 = rtf.paragraphs
+    rp1 = rtf.paragraphs[0]
     rp1.text = "🎯 Executive Framework Pillars"
     rp1.font.size = Pt(18)
     rp1.font.bold = True

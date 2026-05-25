@@ -393,11 +393,12 @@ if st.session_state.submitted:
         pptx_buffer = create_pptx_deck(data, clean_url)
         st.download_button(
             label="📊 Download PowerPoint Slides (.PPTX)",
-            data=pptx_buffer,
+            data=pptx_buffer.getvalue(),
             file_name=f"{data['prospect_name'].lower().replace(' ', '_')}_executive_deck.pptx",
             mime="application/vnd.openxmlformats-officedocument.presentationml.presentation",
             type="secondary"
         )
+
         
     st.caption("Utilize these structured business cases directly inside your presentation deck to execute a direct consultative sale:")
     

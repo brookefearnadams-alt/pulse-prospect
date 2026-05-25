@@ -411,7 +411,7 @@ if st.session_state.submitted:
         
     st.markdown("</div>", unsafe_allow_html=True)
     
-    # NEW ELEMENT: Elvex Dark Funnel Visibility Matrix (Fully Expanded Research Suite)
+        # NEW ELEMENT: Elvex Dark Funnel Visibility Matrix (Fully Expanded Research Suite)
     st.markdown("<div class='section-box' style='border-left: 5px solid #7C3AED;'>", unsafe_allow_html=True)
     st.markdown("### 🔮 Elvex Dark Funnel Visibility Matrix")
     st.caption("Analyzing unmeasurable consumer discovery channels bypassing standard attribution pixels.")
@@ -461,9 +461,7 @@ if st.session_state.submitted:
         
     st.markdown("</div>", unsafe_allow_html=True)
 
-
-
-        # 2. Strategy & Pitch Text Blocks (Upgraded to multi-tabbed research suite)
+    # 2. Strategy & Pitch Text Blocks (Upgraded to multi-tabbed research suite)
     st.markdown("### 🎯 Consultative Account Strategy & Deep Audit Suite")
     
     # Draw native interactive tab headers across your center UI pane

@@ -20,44 +20,35 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Helper function to generate actual PowerPoint binary stream
+# Helper function to generate PowerPoint presentation
 def create_pptx_deck(data):
     prs = Presentation()
-    # Force 16:9 Widescreen standard format
     prs.slide_width = Inches(13.333)
     prs.slide_height = Inches(7.5)
-    blank_layout = prs.slide_layouts[6] # completely blank layout node
+    blank_layout = prs.slide_layouts[6] # Blank slide layout node
     
     slides_config = [
-        {"title": "Diminishing Marginal Returns in Auction Environments", "bullets": data['slide_1_bullets'], "color": RGBColor(239, 68, 68)},
-        {"title": "The Portfolio Effect (Stabilizing Acquisition Costs)", "bullets": data['slide_2_bullets'], "color": RGBColor(16, 185, 129)},
-        {"title": "The Efficiency Blueprint (Capital Reallocation Mix)", "bullets": data['slide_3_bullets'], "color": RGBColor(59, 130, 246)}
+        {"title": "Slide 1: Diminishing Returns in Siloed Auction Environments", "bullets": data['slide_1_bullets']},
+        {"title": "Slide 2: The Portfolio Effect (Stabilizing Blended Acquisition Costs)", "bullets": data['slide_2_bullets']},
+        {"title": "Slide 3: The Efficiency Blueprint (Convergent Capital Mix)", "bullets": data['slide_3_bullets']}
     ]
     
     for config in slides_config:
         slide = prs.slides.add_slide(blank_layout)
-        
-        # Add Top Corporate Brand Identity Ribbon Accent
         shapes = slide.shapes
-        left = Inches(0)
-        top = Inches(0)
-        width = Inches(13.333)
-        height = Inches(1.1)
-        rect = shapes.add_shape(1, left, top, width, height) # 1 represents rectangle
+        rect = shapes.add_shape(1, Inches(0), Inches(0), Inches(13.333), Inches(1.1))
         rect.fill.solid()
-        rect.fill.fore_color.rgb = RGBColor(30, 58, 138) # Corporate Deep Dark Blue
+        rect.fill.fore_color.rgb = RGBColor(30, 58, 138)
         rect.line.fill.background()
         
-        # Slide Title text frame alignment
         txBox = slide.shapes.add_textbox(Inches(0.5), Inches(0.15), Inches(12), Inches(0.8))
         tf = txBox.text_frame
         p = tf.paragraphs[0]
         p.text = config["title"]
         p.font.size = Pt(28)
         p.font.bold = True
-        p.font.color.rgb = RGBColor(255, 255, 255) # Pure White Header Text
+        p.font.color.rgb = RGBColor(255, 255, 255)
         
-        # Slide Bullet Points content frame alignment
         contentBox = slide.shapes.add_textbox(Inches(0.75), Inches(1.8), Inches(11.833), Inches(5))
         ctf = contentBox.text_frame
         ctf.word_wrap = True
@@ -66,8 +57,8 @@ def create_pptx_deck(data):
             p_bullet = ctf.add_paragraph() if idx > 0 else ctf.paragraphs[0]
             p_bullet.text = f"• {bullet}"
             p_bullet.font.size = Pt(22)
-            p_bullet.font.color.rgb = RGBColor(55, 65, 81) # Charcoal gray text
-            p_bullet.space_after = Pt(24) # Add line pacing layout room
+            p_bullet.font.color.rgb = RGBColor(55, 65, 81)
+            p_bullet.space_after = Pt(24)
             
     binary_output = io.BytesIO()
     prs.save(binary_output)
@@ -105,7 +96,7 @@ st.markdown("###")
 st.markdown("### 🔍 Enterprise Cost-Center & Margin Diagnostic")
 
 if "url_input" not in st.session_state:
-    st.session_state.url_input = "https://www.cityfurniture.com/"
+    st.session_state.url_input = "https://cityfurniture.com"
 
 prospect_url = st.text_input(
     "Input Target Prospect Website URL:", 
@@ -116,7 +107,7 @@ prospect_url = st.text_input(
 # Button Layout alignment
 btn_col1, btn_col2, _ = st.columns(3)
 with btn_col1:
-    if st.button("Generate Prospecting Overview", type="primary"):
+    if st.button("Generate Strategic Financial Briefing", type="primary"):
         st.session_state.submitted = True
 with btn_col2:
     if st.button("Reset Form"):
@@ -133,33 +124,33 @@ mock_database = {
         "meta_ad_count": "84 Active Creative Variations",
         "google_ad_types": "Google Performance Max (PMax), Local Inventory Ads, YouTube Pre-Roll",
         "pixel_detections": "Meta Pixel (Advanced Conversions), Google Floodlight, Pinterest Tag, Criteo Retargeting Engine",
-        "creative_gap": "92% of marketing assets are tied directly to margin-diluting discount codes and price-cut promotional inventory. Significant deficit in equity-building assets that protect long-term gross product margins.",
-        "competitive_threat": "National scale conglomerates have increased regional ad auction spending by 54% this quarter, artificially driving up customer acquisition inflation and squeezing regional retail operating income.",
-        "vulnerability": "Severe customer acquisition cost (CAC) inflation. Relying exclusively on immediate digital feedback loops has trapped customer acquisition within a highly competitive auction model, leading to a 41% YoY increase in conversion costs.",
-        "vbr_statement": "Regional tracking confirms that mid-market operations that insulate their digital customer acquisition pipelines with a broad-market authority baseline achieve an average 21% reduction in overall digital CAC. This structural pivot stabilizes margins by reducing direct dependency on hyper-inflated, auction-based bidding platforms.",
-        "recommended_mix": "50% Market Authority Baselines (Mass Media) | 30% Mid-Funnel Localized Geotargeting | 20% Premium Digital Integration",
-        "email_subject": "Stabilizing City Furniture's customer acquisition costs and protecting product margins",
-        "email_body": "Hi Team City Furniture,\n\nI’ve been reviewing City Furniture’s regional customer acquisition footprint. Our enterprise analytics dashboard flags that your current digital pipeline is heavily leveraged within automated ad auctions, managing roughly 84 active creative variations across standard channels.\n\nWhile this model efficiently captures low-hanging demand, it introduces a severe financial vulnerability: national competitors have increased local auction bids by 54% this quarter, driving your customer acquisition costs (CAC) up an estimated 41% YoY and putting pressure on net operating margins.\n\nOur cross-platform financial data demonstrates that regional retailers who anchor their digital acquisition engines with a broad-market authority baseline reduce overall digital CAC by 21%. This approach shifts your budget away from volatile, reactive bidding environments and locks in a predictable market share baseline.\n\nI have put together a 3-slide operational blueprint detailing how this mix adjustment will stabilize your acquisition costs this quarter. Do you have 10 minutes this Thursday at 2 PM for a brief, business-level look at the numbers?\n\nBest,\n[Account Executive Name]",
-                "slide_1_bullets": [
-            "Digital Inflation: City Furniture is absorbing a 38% YoY increase in Meta/Google acquisition costs.",
-            "Keyword Conquesting: Competitors are outbidding EcoRest by 42% on high-intent local search phrases.",
-            "Creative Bottleneck: 34 active Meta ads rely entirely on static testimonials, ignoring screen-based video storytelling."
+        "creative_gap": "92% of marketing assets focus on low-dwell price promotional inventory. Dwell time is under 1.5 seconds. Massive deficit in broad equity storytelling or brand anchoring slots.",
+        "competitive_threat": "Rooms To Go, Ashley, Wayfair, and Amazon are heavily outbidding them on bottom-of-funnel intent terms, driving up local auction CPM inflation.",
+        "vulnerability": "Paying premium rates to harvest low-hanging demand that competitors can easily disrupt. They are essentially buying intent that national players control through massive ad spend budgets.",
+        "vbr_statement": "Secure retail insights confirm that anchoring localized search campaigns with high-frequency daytime and early news broadcast blocks stabilizes customer acquisition cost (CAC) inflation by a proven 24%. This cross-platform mix establishes proprietary top-of-mind brand authority, cutting direct dependency on volatile ad bidding auctions.",
+        "recommended_mix": "50% Local Linear TV Authority Layers | 30% Connected TV (CTV) Zip Targets | 20% Search/Social Retargeting Engine",
+        "email_subject": "Bypassing national ad auction inflation for City Furniture",
+        "email_body": "Hi Team City Furniture,\n\nI’ve been reviewing your regional customer acquisition footprint. Our enterprise analytics engine flagged that you are heavily leveraged within hyper-competitive automated ad auctions, balancing roughly 84 active social creative sets alongside a heavy Google PMax footprint.\n\nWhile this bottom-of-funnel approach converts active shoppers, it introduces an operational inefficiency: you are directly bidding against multi-billion dollar national players like Wayfair and Ashley, driving your digital acquisition costs up and leaving you vulnerable to margin erosion.\n\nOur vertical multi-market data shows that regional retailers who anchor their active search spend with high-frequency daytime and local news media blocks insulate their digital budgets, driving an immediate 24% drop in blended CAC and a 15% surge in direct organic web intent loops.\n\nI have structured a 3-slide strategic allocation model showing how this mix protection stabilizes your acquisition margins. Do you have 10 minutes this Thursday at 2 PM to run through the data?\n\nBest,\n[Account Executive Name]",
+        "slide_1_bullets": [
+            "The Auction Trap: Bidding directly against multi-billion dollar national conglomerates (Wayfair, Ashley) on standard search keywords.",
+            "Conversion Erosion: Over-leveraging bottom-of-funnel digital bidding drives up blended CAC as local auction prices inflate.",
+            "The Attention Deficit: Dwell time on current programmatic mobile banners sits under 1.5 seconds, failing to anchor true household brand consideration."
         ],
         "slide_2_bullets": [
-            "The Market Shield: Re-establishing broad-market brand equity builds a proprietary consumer consideration pipeline outside of ad platforms.",
-            "The Portfolio Effect: Transitioning away from pure-play digital bidding yields a proven 21% reduction in total blended acquisition costs.",
-            "Showroom Asset Optimization: Broad geographic presence drives an 18% lift in showroom asset utilization and floor traffic."
+            "The Market Shield: Re-establishing localized broad-market equity reduces dependency on volatile platform auction bids.",
+            "The Halo Effect: Anchoring search campaigns with strategic daytime and local news flights cuts digital CAC by 24%.",
+            "Showroom Asset Lift: Integrating television authority loops yields a proven 22% increase in regional showroom foot traffic."
         ],
         "slide_3_bullets": [
-            "The Allocation Reset: Diversifying capital allocations into a structured mix of 50% broad-market authority, 30% targeted streaming, and 20% premium digital integrations.",
-            "Attribution Alignment: Measuring success via enterprise web baseline traffic lifts and total blended marketing efficiency ratios (MER) rather than isolated click-through tracking.",
-            "Strategic Next Step: A 10-minute executive alignment meeting to review local market cost-insulation test zones."
-          ],
+            "Convergent Reallocation: Reallocating capital to 50% broad-market authority layers, 30% CTV targeting, and 20% optimized digital intent capture.",
+            "Attribution Alignment: Measuring performance via broad marketing efficiency ratios (MER) and post-air organic spikes, bypassing siloed click tracking.",
+            "Strategic Execution: Deploying low-risk test zones across high-propensity homeowner zip codes next month."
+        ]
     },
     "ecorest": {
         "prospect_name": "EcoRest Bedding",
         "vertical": "DTC Home Goods / Premium Mattress",
-        "estimated_digital_monthly": "$45,000 - $60,000",
+        "estimated_digital_monthly": "\$45,000 - \$60,000",
         "meta_ad_count": "34 Active Creative Variations",
         "google_ad_types": "Performance Max (Heavy Search & Shopping focus)",
         "pixel_detections": "Meta Pixel, Google Tag Manager, TikTok Pixel, Klaviyo Tracking",
@@ -187,7 +178,8 @@ mock_database = {
         ]
     }
 }
-# Smart Input Matching Logic
+
+# --- THE DATA PROCESSING AREA (LINE-BY-LINE ALIGNED) ---
 if st.session_state.submitted:
     with st.spinner("Processing economic and digital footprint metrics..."):
         time.sleep(1.0)
@@ -204,14 +196,12 @@ if st.session_state.submitted:
     st.markdown("---")
     st.success(f"⚡ STRATEGIC ACCOUNT BRIEFING COMPILED FOR: {data['prospect_name'].upper()}")
     
-    # Text Meta Block
     st.write(f"**Target Account:** {data['prospect_name']}  |  **Market Vertical:** {data['vertical']}  |  **Analytical Framework:** Cost-Center Optimization Index")
     
-         # 1. Scraped Signals Block (Upgraded Enterprise Data Matrix with Text Wrapping)
+    # 1. Upgraded Advanced Signal Scrape Matrix Panel
     st.markdown("<div class='section-box'>", unsafe_allow_html=True)
     st.markdown(f"### 🕵️‍♂️ Advanced Signal Scrape Matrix: {data['prospect_name'].upper()}")
     
-    # Visual Data Metric Columns (Using st.text_area for forced text wrapping)
     m1, m2, m3, m4 = st.columns(4)
     with m1:
         st.markdown("**💰 Monthly Capital Allocation**")
@@ -229,7 +219,6 @@ if st.session_state.submitted:
         
     st.markdown("---")
     
-    # Deep Technical & Strategic Signal Fields
     col_sig1, col_sig2 = st.columns(2)
     with col_sig1:
         st.markdown("#### 💻 Technical Infrastructure Diagnostics")
@@ -239,13 +228,39 @@ if st.session_state.submitted:
         st.markdown("• **Estimated Desktop Domain Authority (DA):** `64/100`" if "city" in clean_url or "furniture" in clean_url else "• **Estimated Desktop Domain Authority (DA):** `42/100`")
         
     with col_sig2:
-        st.markdown("#### 📉 Strategic Vulnerabilities & Competitive Gaps")
+        st.markdown("#### 📉 Strategic Gaps & Market Pressures")
         st.markdown(f"⚠️ **Market Share Erosion Threat:** {data['competitive_threat']}")
         st.markdown(f"💡 **Creative Asset Gap:** {data['creative_gap']}")
         st.markdown("• **Estimated Digital Share-of-Voice (SOV) Slip:** `Drop 14% YoY due to National Bidding Pods`" if "city" in clean_url or "furniture" in clean_url else "• **Estimated Digital Share-of-Voice (SOV) Slip:** `Drop 22% YoY vs Venture-Backed Competitors`")
         
     st.markdown("</div>", unsafe_allow_html=True)
-
+    
+    # 2. Strategy & Pitch Text Blocks
+    st.markdown("### 🎯 Consultative Account Strategy")
+    st.info(f"**The Valid Business Reason (VBR):**\n\n{data['vbr_statement']}")
+    st.error(f"**Identified Operational Inefficiency:**\n\n{data['vulnerability']}")
+    
+    # 3. Outreach Copy Block
+    st.markdown("### 📨 Automated Executive Outreach Script")
+    st.text_input("Recommended Subject Line:", data['email_subject'])
+    st.text_area("Generated Consultative Copy (Ready to Copy/Paste):", data['email_body'], height=250)
+    
+    # 4. Presentation Slides Content Header with Real PPTX Downloader
+    st.markdown("---")
+    
+    dl_col1, dl_col2 = st.columns(2)
+    with dl_col1:
+        st.markdown("### 📊 Executive Presentation Content Architecture")
+        st.write(f"**Proposed Marketing Capital Reallocation Mix:** {data['recommended_mix']}")
+    with dl_col2:
+        pptx_buffer = create_pptx_deck(data)
+        st.download_button(
+            label="📊 Download PowerPoint Slides (.PPTX)",
+            data=pptx_buffer,
+            file_name=f"{data['prospect_name'].lower().replace(' ', '_')}_executive_deck.pptx",
+            mime="application/vnd.openxmlformats-officedocument.presentationml.presentation",
+            type="secondary"
+        )
         
     st.caption("Utilize these structured business cases directly inside your presentation deck to execute a direct consultative sale:")
     

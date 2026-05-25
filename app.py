@@ -189,18 +189,18 @@ mock_database = {
 }
 
 # Smart Input Matching Logic
-if st.session_state.submitted:
-    with st.spinner("Processing economic and digital footprint metrics..."):
-        time.sleep(1.0)
-        
+    # Clean up the input string to match keywords anywhere in the typed text
     clean_url = prospect_url.lower()
     
+    # Priority 1: Check for City Furniture first to prevent .com overlap
     if "city" in clean_url or "furniture" in clean_url:
         data = mock_database["cityfurniture"]
     elif "ecorest" in clean_url or "bedding" in clean_url:
         data = mock_database["ecorest"]
     else:
+        # Default fallback to guarantee a great presentation layout
         data = mock_database["cityfurniture"]
+
         
     st.markdown("---")
     st.success(f"⚡ STRATEGIC ACCOUNT BRIEFING COMPILED FOR: {data['prospect_name'].upper()}")

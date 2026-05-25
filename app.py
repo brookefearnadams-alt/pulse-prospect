@@ -354,7 +354,7 @@ if st.session_state.submitted:
         st.markdown("### 📊 Executive Presentation Content Architecture")
         st.write(f"**Proposed Marketing Capital Reallocation Mix:** {data['recommended_mix']}")
     with dl_col2:
-        # Fixed execution pipeline pass
+        # Pass clean_url into the upgraded PowerPoint layout engine
         pptx_buffer = create_pptx_deck(data, clean_url)
         st.download_button(
             label="📊 Download PowerPoint Slides (.PPTX)",

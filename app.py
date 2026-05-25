@@ -1,58 +1,53 @@
 import streamlit as st
 import time
 
-# Page configuration with broad layouts
+# Page configuration
 st.set_page_config(layout="wide", page_title="OmniPulse AI", page_icon="📡")
 
-# Custom Media Company Header & Corporate Branding Style
+# Custom Styles for High Scannability
 st.markdown("""
     <style>
-    .main-title { font-size: 40px !important; font-weight: 800; color: #1E3A8A; margin-bottom: 0px; }
-    .subtitle { font-size: 16px !important; color: #4B5563; margin-bottom: 25px; font-style: italic; }
-    .metric-card { background-color: #F3F4F6; padding: 15px; border-radius: 8px; border-left: 5px solid #2563EB; }
-    .data-pill { background-color: #EFF6FF; padding: 12px; border-radius: 6px; border: 1px solid #BFDBFE; margin-bottom: 10px; }
+    .main-title { font-size: 36px !important; font-weight: 800; color: #1E3A8A; margin: 0; }
+    .subtitle { font-size: 15px !important; color: #4B5563; margin-bottom: 20px; font-style: italic; }
+    .section-box { background-color: #F9FAFB; padding: 20px; border-radius: 8px; border: 1px solid #E5E7EB; margin-bottom: 20px; }
+    .slide-red { background-color: #FEE2E2; padding: 15px; border-radius: 6px; border-left: 5px solid #EF4444; margin-bottom: 15px; }
+    .slide-green { background-color: #D1FAE5; padding: 15px; border-radius: 6px; border-left: 5px solid #10B981; margin-bottom: 15px; }
+    .slide-blue { background-color: #DBEAFE; padding: 15px; border-radius: 6px; border-left: 5px solid #3B82F6; margin-bottom: 15px; }
     </style>
 """, unsafe_allow_html=True)
 
-# Corporate Header Top Bar
-col_logo, col_text = st.columns(2)
-with col_logo:
-    st.markdown("<h1 style='font-size: 50px; margin: 0;'>📡</h1>", unsafe_allow_html=True)
-with col_text:
-    st.markdown("<p class='main-title'>OMNIPULSE AI</p>", unsafe_allow_html=True)
-    st.markdown("<p class='subtitle'>The Official Media Sales Intelligence Platform — Powered by Enterprise Data & Elvex Flows</p>", unsafe_allow_html=True)
+# Top Header Layout (Stacked for better screen space)
+st.markdown("<p class='main-title'>📡 OMNIPULSE AI</p>", unsafe_allow_html=True)
+st.markdown("<p class='subtitle'>The Official Media Sales Intelligence Platform — Powered by Enterprise Data & Elvex Flows</p>", unsafe_allow_html=True)
 
-# Enterprise System Status Indicators
-st.sidebar.markdown("### 🖥️ System Status")
+# Sidebar System Navigation
+st.sidebar.markdown("### 🖥️ Platform Controls")
 st.sidebar.success("● Core Engine: Connected")
-st.sidebar.success("● Elvex Knowledge Base: Active")
-st.sidebar.info("● Core Database: 2026 Linear + Digital Metrics")
+st.sidebar.success("● Knowledge Base: Active")
+st.sidebar.info("● Database Year: 2026")
 st.sidebar.markdown("---")
-st.sidebar.markdown("### 💡 Hackathon Demo Note")
-st.sidebar.write("Type **'ecorest'** in the URL box to trigger the premium bedding client analysis. Type any other URL for the general retail scenario.")
+st.sidebar.markdown("**Demo Input Mapping:**")
+st.sidebar.write("- Type **'ecorest'** for the premium bedding analysis.")
+st.sidebar.write("- Type **'cityfurniture'** or any other URL for the retail scenario.")
 
-# Live Market Performance Tickers
+# Performance Tickers
 t1, t2, t3, t4 = st.columns(4)
-with t1:
-    st.metric(label="Average Cross-Platform CPA Lift", value="-24%", delta="Optimized")
-with t2:
-    st.metric(label="Direct-to-Client Revenue Capture", value="+31%", delta="Net New")
-with t3:
-    st.metric(label="Agency RFPs Bypassed This Month", value="142", delta="Velocity")
-with t4:
-    st.metric(label="Average Pitch Creation Time", value="12 Sec", delta="-98%")
+t1.metric(label="Average CPA Lift", value="-24%")
+t2.metric(label="Direct Revenue Capture", value="+31%")
+t3.metric(label="Agency RFPs Bypassed", value="142")
+t4.metric(label="Pitch Build Time", value="12 Sec")
 
 st.markdown("###")
 
-# Main Interface Entry Section
+# User Input Panel
 st.markdown("### 🔍 Deep Web Scrape & Local Media Diagnostic")
 prospect_url = st.text_input(
-    "Input Target Prospect Website URL (e.g., ://ecorestbedding.com):", 
-    value="://ecorestbedding.com"
+    "Input Target Prospect Website URL:", 
+    value="https://www.cityfurniture.com/"
 )
 submit_button = st.button("Generate Deep Intelligence Briefing", type="primary")
 
-# Enriched Database with Heavy Media Data Points
+# Database Configuration
 mock_database = {
     "ecorest": {
         "prospect_name": "EcoRest Bedding",
@@ -60,7 +55,7 @@ mock_database = {
         "estimated_digital_monthly": "\$45,000 - \$60,000",
         "meta_ad_count": "34 Active Creative Variations",
         "google_ad_types": "Performance Max (Heavy Search & Shopping focus)",
-        "pixel_detections": ["Meta Pixel (Custom Conversions)", "Google Tag Manager", "TikTok Pixel", "Klaviyo Tracking"],
+        "pixel_detections": "Meta Pixel (Custom Conversions), Google Tag Manager, TikTok Pixel",
         "creative_gap": "Over-indexing on text-heavy testimonial static ads. Complete absence of high-production video storytelling or lifestyle video formats to build brand equity.",
         "competitive_threat": "Casper and Purple Mattresses are currently running localized geotargeted digital conquests in this market, outbidding EcoRest for the keyword 'organic latex mattress' by 42%.",
         "vulnerability": "Heavy reliance on Meta and Google Ads is causing a 38% YoY inflation in their Digital Customer Acquisition Costs (CAC), severely squeezing net margins on their organic latex mattress line.",
@@ -73,30 +68,28 @@ mock_database = {
         "slide_3_bullets": ["Efficiency Mix: Deploying a 60% Daytime Linear flight paired with high-impact CTV retargeting.", "Pixel Sync: Utilizing existing Meta pixels to retarget consumers exposed to our local broadcast windows.", "Next Steps: Reviewing customized local zone maps on Thursday."]
     },
     "default": {
-        "prospect_name": "Local Business Prospect",
-        "vertical": "General Commercial / Local Services",
-        "estimated_digital_monthly": "\$12,000 - \$18,000",
-        "meta_ad_count": "5 Active Creative Variations",
-        "google_ad_types": "Standard Local Search Text Ads",
-        "pixel_detections": ["Meta Pixel (Basic)", "Google Analytics 4"],
-        "creative_gap": "Limited asset utilization. Ads have not been refreshed in over 90 days, indicating severe creative fatigue and low engagement rates.",
-        "competitive_threat": "National franchises are saturating the local digital zip codes with automated, high-budget bidding loops that force local direct players into low-tier placements.",
-        "vulnerability": "Current digital tactics are trapped in a high-bid local competition loop, resulting in severe ad fatigue and diminishing conversion returns.",
-        "vbr_statement": "Cross-platform data confirms that adding localized Linear TV tactics to active digital campaigns drops blended CPA by 18% and opens up untapped high-net-worth local demographics.",
-        "recommended_mix": "50% Early Fringe & Access Linear | 30% Streaming/OTT Local Geotargets | 20% Native Digital Banner Sponsorships",
-        "email_subject": "Fixing digital ad fatigue and scaling local acquisition",
-        "email_body": "Hi Team,\n\nI noticed your recent local digital campaigns and wanted to share a quick piece of market efficiency data. Our system detected that your digital creatives haven't been updated in 90 days, exposing your local brand to severe ad fatigue and rising competitive auction bids from national players.\n\nOur localized media campaign data shows that adding a foundation of broadcast television tactics drops blended digital CPA by 18%. It captures a highly stable, affluent local audience that bypasses digital ad-blockers entirely.\n\nI have a 3-slide strategy ready showing exactly how this multi-platform lift works for your industry. Do you have 10 minutes to connect this week?\n\nBest,\n[Account Executive Name]",
-        "slide_1_bullets": ["The Algorithmic Trap: National brands outbidding local services on core search keywords.", "Creative Fatigue: Active digital assets unrefreshed for 90+ days, dropping user click-through rates.", "The Blind Spot: Missing the offline, high-spending local market that controls local service spending."],
-        "slide_2_bullets": ["The Multiplier: Broadcast builds the market dominance and authority digital needs to convert.", "Efficiency Gain: Blended acquisition costs drop by 18% when multi-screen touchpoints are utilized.", "Frequency Optimization: Reaching the consumer across premium local television inventory."],
-        "slide_3_bullets": ["Tactical Mix: Affordable Early Fringe linear paired with high-impact localized digital sponsorships.", "Attribution: Tracking baseline traffic lift during broadcast flight windows.", "Next Steps: 10-minute strategy alignment call."]
+        "prospect_name": "City Furniture",
+        "vertical": "Home Furnishings / Regional Retailer",
+        "estimated_digital_monthly": "\$85,000 - \$120,000",
+        "meta_ad_count": "52 Active Ad Variations",
+        "google_ad_types": "Local Inventory Ads, Performance Max, Youtube Pre-Roll",
+        "pixel_detections": "Meta Pixel, Google Floodlight, Pinterest Tag, Criteo Retargeting",
+        "creative_gap": "Heavy dependence on promotional sales banners and price-cut imagery. Significant lack of upper-funnel storytelling that emphasizes design consulting or financing ease.",
+        "competitive_threat": "National chains (Rooms To Go, Ashley Furniture) are saturating regional zip codes with automated programmatic bids, forcing local direct players into high-cost bidding environments.",
+        "vulnerability": "Current digital tactics are trapped in an aggressive programmatic retargeting loop. This causes audience fatigue and drops online return-on-ad-spend (ROAS) during non-holiday periods.",
+        "vbr_statement": "Localized market data indicates that backing regional retail digital campaigns with consistent Early Fringe and Access Linear TV blocks increases direct digital conversions by 21% while bypassing localized digital auction bidding peaks.",
+        "recommended_mix": "50% Early Fringe & Access Linear | 30% Connected TV Geotargets | 20% Premium Desktop Sponsorships",
+        "email_subject": "Bypassing local digital ad inflation for City Furniture",
+        "email_body": "Hi Team City Furniture,\n\nI’ve been studying your regional digital ad footprints. Your current mix of Local Inventory Ads and active Meta sets effectively targets immediate shoppers, but it exposes your budget to heavy holiday auction inflation from national furniture conglomerates.\n\nOur cross-platform performance tracking reveals that integrating Early Fringe and Access linear windows builds an immediate market baseline that improves digital conversion efficiency by 21%.\n\nThis multi-platform layer offsets audience fatigue and locks in market share before competitors can outbid you online.\n\nI have a 3-slide strategic blueprint ready for City Furniture outlining this lift. Do you have 10 minutes for a brief call this week?\n\nBest,\n[Account Executive Name]",
+        "slide_1_bullets": ["Auction Pressures: Facing continuous digital auction bidding inflation driven by national franchise spend.", "Audience Fatigue: High ad frequency with static promotional banners reduces overall click-through rates.", "Placement Crutch: Retargeting bottom-funnel shoppers while losing mid-funnel consideration."],
+        "slide_2_bullets": ["The Reach Engine: Early Fringe and Access linear captures the localized household decision-makers.", "Conversion Lift: Proven 21% increase in web direct conversions when broadcast pairs with digital campaigns.", "Auction Protection: Broad market authority lowers reliance on expensive competitive search bidding terms."],
+        "slide_3_bullets": ["The Blueprint: A balanced mix of 50% high-index local linear combined with precision CTV geotargets.", "Attribution Tracking: Deploying immediate post-air lift models to measure real-time website traffic spikes.", "Action Item: 10-minute multi-screen alignment strategy brief."]
     }
 }
 
-# Run Screen Sequence
+# Output Logic Block
 if submit_button:
-    with st.spinner("⚙️ Accessing Enterprise Scraper Node... Parsing Meta Ad Libraries & Tracking Pixels..."):
-        time.sleep(1.2)
-    with st.spinner("📊 Grounding insights with historical attribution databases..."):
+    with st.spinner("Processing digital footprint..."):
         time.sleep(1.0)
         
     clean_url = prospect_url.lower()
@@ -108,12 +101,56 @@ if submit_button:
     st.markdown("---")
     st.success(f"⚡ STRATEGIC PROFILE COMPILED FOR: {data['prospect_name'].upper()}")
     
-    # Metadata Badges Block
-    b1, b2, b3 = st.columns(3)
-    b1.markdown(f"**Target Client:** `{data['prospect_name']}`")
-    b2.markdown(f"**Industry Vertical:** `{data['vertical']}`")
-    b3.markdown("**Confidence Score:** `98% (Data Grounded)`")
+    # Text Meta Block
+    st.write(f"**Target Client:** {data['prospect_name']}  |  **Industry Vertical:** {data['vertical']}  |  **Data Grounding:** 98% Confidence")
     
-    st.markdown("###")
+    # 1. Scraped Signals Block (Full Width Panel)
+    st.markdown("<div class='section-box'>", unsafe_allow_html=True)
+    st.markdown("### 🕵️‍♂️ Scraped Digital Signals & Competitive Intelligence")
+    # 1. Scraped Signals Block (Full Width Panel)
+    st.markdown("<div class='section-box'>", unsafe_allow_html=True)
+    st.markdown("### 🕵️‍♂️ Scraped Digital Signals & Competitive Intelligence")
+    st.write(f"• **Est. Monthly Digital Spend:** {data['estimated_digital_monthly']}")
+    st.write(f"• **Active Ad Footprint:** {data['meta_ad_count']}")
+    st.write(f"• **Google Channels:** {data['google_ad_types']}")
+    st.write(f"• **Active Tracking Pixels Detected:** {data['pixel_detections']}")
+    st.write(f"• ⚠️ **Competitive Threat:** {data['competitive_threat']}")
+    st.write(f"• 💡 **Creative Optimization Gap:** {data['creative_gap']}")
+    st.markdown("</div>", unsafe_allow_html=True)
     
-    # --- NEW SCRAPED DATA INTELLIGENCE GRID ---
+    # 2. Strategy & Pitch Text Blocks
+    st.markdown("### 🎯 Data-Backed Pitch Strategy")
+    st.info(f"**The Valid Business Reason (VBR):**\n\n{data['vbr_statement']}")
+    st.error(f"**Identified Digital Vulnerability:**\n\n{data['vulnerability']}")
+    
+    # 3. Outreach Copy Block
+    st.markdown("### 📨 Automated Executive Outreach Script")
+    st.text_input("Recommended Subject Line:", data['email_subject'])
+    st.text_area("Generated Consultative Copy (Ready to Copy/Paste):", data['email_body'], height=250)
+    
+    # 4. Presentation Slides Content (Stacked Vertically for Perfect Scannability)
+    st.markdown("---")
+    st.markdown("### 📊 Automated Multi-Tactical Pitch Presentation Content")
+    st.write(f"**Recommended Cross-Platform Allocation:** {data['recommended_mix']}")
+    st.caption("Copy these blocks directly into your PowerPoint deck to pitch a direct, non-agency account:")
+    
+    # Slide 1
+    st.markdown("<div class='slide-red'>", unsafe_allow_html=True)
+    st.markdown("**SLIDE 1: The Digital Bottleneck (Why Only Using Digital Fails)**")
+    for bullet in data['slide_1_bullets']:
+        st.markdown(f"❌ {bullet}")
+    st.markdown("</div>", unsafe_allow_html=True)
+        
+    # Slide 2
+    st.markdown("<div class='slide-green'>", unsafe_allow_html=True)
+    st.markdown("**SLIDE 2: The Multiplier Effect (Why Broadcast + Digital Wins)**")
+    for bullet in data['slide_2_bullets']:
+        st.markdown(f"📈 {bullet}")
+    st.markdown("</div>", unsafe_allow_html=True)
+        
+    # Slide 3
+    st.markdown("<div class='slide-blue'>", unsafe_allow_html=True)
+    st.markdown("**SLIDE 3: The Multi-Platform Blueprint (The Tactical Mix)**")
+    for bullet in data['slide_3_bullets']:
+        st.markdown(f"🛠️ {bullet}")
+    st.markdown("</div>", unsafe_allow_html=True)

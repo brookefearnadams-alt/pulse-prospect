@@ -25,12 +25,12 @@ def create_pptx_deck(data):
     prs = Presentation()
     prs.slide_width = Inches(13.333)
     prs.slide_height = Inches(7.5)
-    blank_layout = prs.slide_layouts[6] # Blank slide layout node
+    blank_layout = prs.slide_layouts[6]
     
     slides_config = [
-        {"title": "Slide 1: Diminishing Returns in Siloed Auction Environments", "bullets": data['slide_1_bullets']},
-        {"title": "Slide 2: The Portfolio Effect (Stabilizing Blended Acquisition Costs)", "bullets": data['slide_2_bullets']},
-        {"title": "Slide 3: The Efficiency Blueprint (Convergent Capital Mix)", "bullets": data['slide_3_bullets']}
+        {"title": f"Slide 1: {data['prospect_name']} — The Digital Bottleneck", "bullets": data['slide_1_bullets']},
+        {"title": "Slide 2: The Cross-Platform Portfolio Multiplier Effect", "bullets": data['slide_2_bullets']},
+        {"title": "Slide 3: Marketing Capital Allocation & Efficiency Blueprint", "bullets": data['slide_3_bullets']}
     ]
     
     for config in slides_config:
@@ -45,7 +45,7 @@ def create_pptx_deck(data):
         tf = txBox.text_frame
         p = tf.paragraphs[0]
         p.text = config["title"]
-        p.font.size = Pt(28)
+        p.font.size = Pt(26)
         p.font.bold = True
         p.font.color.rgb = RGBColor(255, 255, 255)
         
@@ -56,9 +56,9 @@ def create_pptx_deck(data):
         for idx, bullet in enumerate(config["bullets"]):
             p_bullet = ctf.add_paragraph() if idx > 0 else ctf.paragraphs[0]
             p_bullet.text = f"• {bullet}"
-            p_bullet.font.size = Pt(22)
+            p_bullet.font.size = Pt(20)
             p_bullet.font.color.rgb = RGBColor(55, 65, 81)
-            p_bullet.space_after = Pt(24)
+            p_bullet.space_after = Pt(18)
             
     binary_output = io.BytesIO()
     prs.save(binary_output)
@@ -72,12 +72,14 @@ st.markdown("<p class='subtitle'>The Official Media Sales Intelligence Platform 
 # Sidebar System Navigation
 st.sidebar.markdown("### 🖥️ Platform Controls")
 st.sidebar.success("● Core Engine: Connected")
-st.sidebar.success("● Knowledge Base: Active")
-st.sidebar.info("● Database Year: 2026")
+st.sidebar.success("### 🧠 Elvex Workflow Intelligence Nodes")
+st.sidebar.info("✔ Web Scraper Node [Active]")
+st.sidebar.info("✔ Cross-Platform Grounding Database [Active]")
+st.sidebar.info("✔ Business Rule Formulation Persona [Active]")
 st.sidebar.markdown("---")
 st.sidebar.markdown("**Demo Input Mapping:**")
-st.sidebar.write("• Type **'cityfurniture'** for regional furniture retail metrics.")
-st.sidebar.write("• Type **'ecorest'** for the premium bedding analysis.")
+st.sidebar.write("• Type **'cityfurniture'** for South Florida regional retail intelligence.")
+st.sidebar.write("• Type **'ecorest'** for premium DTC mattress metrics.")
 
 # Session State Initialization
 if "submitted" not in st.session_state:
@@ -85,10 +87,10 @@ if "submitted" not in st.session_state:
 
 # Performance Tickers
 t1, t2, t3, t4 = st.columns(4)
-t1.metric(label="Average CPA Efficiency Lift", value="-24%")
-t2.metric(label="Direct Revenue Capture", value="+31%")
-t3.metric(label="Agency RFPs Bypassed", value="142")
-t4.metric(label="Briefing Build Time", value="12 Sec")
+t1.metric(label="Average Cross-Platform CAC Drop", value="-24%")
+t2.metric(label="Multi-Screen Conversion Lift", value="3.2x")
+t3.metric(label="Showroom Foot Traffic Lift", value="+22%")
+t4.metric(label="Elvex Processing Time", value="1.2 Sec")
 
 st.markdown("###")
 
@@ -96,7 +98,7 @@ st.markdown("###")
 st.markdown("### 🔍 Enterprise Cost-Center & Margin Diagnostic")
 
 if "url_input" not in st.session_state:
-    st.session_state.url_input = "https://cityfurniture.com"
+    st.session_state.url_input = "https://www.cityfurniture.com/"
 
 prospect_url = st.text_input(
     "Input Target Prospect Website URL:", 
@@ -115,41 +117,43 @@ with btn_col2:
         st.session_state.url_input = ""
         st.rerun()
 
-# Business-First Strategy Database
+# Elvex-Enriched Strategy Database
 mock_database = {
     "cityfurniture": {
-        "prospect_name": "City Furniture",
-        "vertical": "Home Furnishings / Regional Retailer",
-        "estimated_digital_monthly": "\$145,000 - \$180,000 (Local/Regional Capital Allocation)",
-        "meta_ad_count": "84 Active Creative Variations",
-        "google_ad_types": "Google Performance Max (PMax), Local Inventory Ads, YouTube Pre-Roll",
-        "pixel_detections": "Meta Pixel (Advanced Conversions), Google Floodlight, Pinterest Tag, Criteo Retargeting Engine",
-        "creative_gap": "92% of marketing assets focus on low-dwell price promotional inventory. Dwell time is under 1.5 seconds. Massive deficit in broad equity storytelling or brand anchoring slots.",
-        "competitive_threat": "Rooms To Go, Ashley, Wayfair, and Amazon are heavily outbidding them on bottom-of-funnel intent terms, driving up local auction CPM inflation.",
-        "vulnerability": "Paying premium rates to harvest low-hanging demand that competitors can easily disrupt. They are essentially buying intent that national players control through massive ad spend budgets.",
-        "vbr_statement": "Secure retail insights confirm that anchoring localized search campaigns with high-frequency daytime and early news broadcast blocks stabilizes customer acquisition cost (CAC) inflation by a proven 24%. This cross-platform mix establishes proprietary top-of-mind brand authority, cutting direct dependency on volatile ad bidding auctions.",
-        "recommended_mix": "50% Local Linear TV Authority Layers | 30% Connected TV (CTV) Zip Targets | 20% Search/Social Retargeting Engine",
-        "email_subject": "Bypassing national ad auction inflation for City Furniture",
-        "email_body": "Hi Team City Furniture,\n\nI’ve been reviewing your regional customer acquisition footprint. Our enterprise analytics engine flagged that you are heavily leveraged within hyper-competitive automated ad auctions, balancing roughly 84 active social creative sets alongside a heavy Google PMax footprint.\n\nWhile this bottom-of-funnel approach converts active shoppers, it introduces an operational inefficiency: you are directly bidding against multi-billion dollar national players like Wayfair and Ashley, driving your digital acquisition costs up and leaving you vulnerable to margin erosion.\n\nOur vertical multi-market data shows that regional retailers who anchor their active search spend with high-frequency daytime and local news media blocks insulate their digital budgets, driving an immediate 24% drop in blended CAC and a 15% surge in direct organic web intent loops.\n\nI have structured a 3-slide strategic allocation model showing how this mix protection stabilizes your acquisition margins. Do you have 10 minutes this Thursday at 2 PM to run through the data?\n\nBest,\n[Account Executive Name]",
+        "prospect_name": "CITY Furniture",
+        "vertical": "B2C Retail & Home Goods / Regional Chain",
+        "corporate_intel": "CEO: Andrew Koenig | HQ: Tamarac, FL | Annual Rev: \$919.5M",
+        "estimated_digital_monthly": "\$250,000 - \$400,000 (Estimated Scale Spend Across South Florida Market)",
+        "meta_ad_count": "High-Volume Crowded Auctions (Meta, Google PMax, Programmatic Display)",
+        "google_ad_types": "Aggressive Search Retargeting & Direct Keyword Interception",
+        "pixel_detections": "Meta Advanced Conversion API, Google Floodlight, Criteo Retargeting Tag",
+        "creative_gap": "Dwell time on display assets is under 1.5 seconds. 92% of active creatives focus on margin-diluting discount promo codes instead of brand value storytelling.",
+        "competitive_threat": "Rooms To Go, Ashley, Wayfair, and Amazon are running aggressive keyword conquesting ads, artificially inflating bottom-of-funnel bidding auction CPMs.",
+        "vulnerability": "Paying premium acquisition rates to harvest intent that someone else built. Operating without a broad-market broadcast layer traps their budget inside volatile digital auctions.",
+        "vbr_statement": "Verified cross-platform retail tracking confirms that anchoring localized digital search spend with high-frequency daytime and local news broadcast media blocks drops blended digital Customer Acquisition Cost (CAC) by 24% while driving an immediate 15% surge in high-intent organic brand searches.",
+        "recommended_mix": "Convergent Mix: 50% Mass Local Linear TV Authority Layers | 30% Hyper-Targeted Connected TV | 20% Search/Social Retargeting Shield",
+        "email_subject": "Optimizing CITY Furniture's customer acquisition costs and showroom foot traffic by 22%",
+        "email_body": "Hi Team CITY Furniture,\n\nI’ve been tracking your market footprint across South Florida. Our enterprise intelligence analytics engine flags that your digital acquisition layer is heavily leveraged within automated ad auctions, facing intense local keyword conquesting from national scale competitors like Wayfair and Ashley.\n\nWhile your e-commerce retargeting captures immediate intent, a digital-only approach leaves you vulnerable: auction competition is inflating your acquisition costs, and average display ad dwell time has dropped below 1.5 seconds.\n\nOur cross-platform data reveals that regional retailers who anchor their search and social engines with structured daytime and local news media blocks create an insulation layer that reduces digital CAC by 24%, while triggering a 22% increase in verified showroom foot traffic.\n\nI’ve mapped out a 3-slide efficiency blueprint showing how a convergent media allocation will protect CITY Furniture's product margins this quarter. Do you have 10 minutes this Thursday at 2 PM to look over the metrics?\n\nBest,\n[Account Executive Name]",
         "slide_1_bullets": [
-            "The Auction Trap: Bidding directly against multi-billion dollar national conglomerates (Wayfair, Ashley) on standard search keywords.",
-            "Conversion Erosion: Over-leveraging bottom-of-funnel digital bidding drives up blended CAC as local auction prices inflate.",
-            "The Attention Deficit: Dwell time on current programmatic mobile banners sits under 1.5 seconds, failing to anchor true household brand consideration."
+            "The Auction Trap: Bidding directly against multi-billion dollar national conglomerates on hyper-crowded search keywords.",
+            "Margin Pressure: Digital acquisition costs (CAC) are rising as local programmatic auction bids inflate across Florida markets.",
+            "The Attention Gap: Dwell time on transactional digital banner inventory sits under 1.5 seconds, failing to capture lasting household consideration."
         ],
         "slide_2_bullets": [
-            "The Market Shield: Re-establishing localized broad-market equity reduces dependency on volatile platform auction bids.",
-            "The Halo Effect: Anchoring search campaigns with strategic daytime and local news flights cuts digital CAC by 24%.",
-            "Showroom Asset Lift: Integrating television authority loops yields a proven 22% increase in regional showroom foot traffic."
+            "The Portfolio Multiplier: Moving away from siloed digital tactics and adding an offline mass authority layer triggers a 3.2x multi-screen conversion rate lift.",
+            "The Cost Shield: Anchoring digital search and social spending with daytime and early news broadcast flights drops digital CAC by 24%.",
+            "Showroom Asset Lift: Media convergence builds market-wide brand equity, yielding a proven 22% increase in verified in-store foot traffic."
         ],
         "slide_3_bullets": [
-            "Convergent Reallocation: Reallocating capital to 50% broad-market authority layers, 30% CTV targeting, and 20% optimized digital intent capture.",
-            "Attribution Alignment: Measuring performance via broad marketing efficiency ratios (MER) and post-air organic spikes, bypassing siloed click tracking.",
-            "Strategic Execution: Deploying low-risk test zones across high-propensity homeowner zip codes next month."
+            "Convergent Reallocation: Moving budget into a resilient allocation of 50% broad-market authority blocks, 30% zip-code targeted CTV, and 20% digital retargeting capture.",
+            "Advanced Attribution: Measuring campaign success through blended Marketing Efficiency Ratios (MER) and post-air organic spikes, bypassing broken click tracking pixels.",
+            "Strategic Execution: Coordinating localized media test windows across high-propensity South Florida homeowner demographics next month."
         ]
     },
     "ecorest": {
         "prospect_name": "EcoRest Bedding",
         "vertical": "DTC Home Goods / Premium Mattress",
+        "corporate_intel": "DTC E-Commerce Scale Player | Focus: Premium Organic Latex Lines",
         "estimated_digital_monthly": "\$45,000 - \$60,000",
         "meta_ad_count": "34 Active Creative Variations",
         "google_ad_types": "Performance Max (Heavy Search & Shopping focus)",
@@ -196,7 +200,7 @@ if st.session_state.submitted:
     st.markdown("---")
     st.success(f"⚡ STRATEGIC ACCOUNT BRIEFING COMPILED FOR: {data['prospect_name'].upper()}")
     
-    st.write(f"**Target Account:** {data['prospect_name']}  |  **Market Vertical:** {data['vertical']}  |  **Analytical Framework:** Cost-Center Optimization Index")
+    st.write(f"**Target Account:** {data['prospect_name']}  |  **Profile Intel:** {data['corporate_intel']}  |  **Analytical Framework:** Cost-Center Optimization Index")
     
     # 1. Upgraded Advanced Signal Scrape Matrix Panel
     st.markdown("<div class='section-box'>", unsafe_allow_html=True)
@@ -223,9 +227,9 @@ if st.session_state.submitted:
     with col_sig1:
         st.markdown("#### 💻 Technical Infrastructure Diagnostics")
         st.markdown(f"• **Active Tracking Pixels Verified:** `{data['pixel_detections']}`")
-        st.markdown("• **Attribution Tracking Script:** `Google Floodlight Enabled`" if "city" in clean_url or "furniture" in clean_url else "• **Attribution Tracking Script:** `Klaviyo Event Tracking Active`")
+        st.markdown("• **Attribution Tracking Script:** `Google Floodlight Tracker Active`" if "city" in clean_url or "furniture" in clean_url else "• **Attribution Tracking Script:** `Klaviyo Event Tracking Active`")
         st.markdown("• **SSL Security Framework:** `TLS 1.3 Certified (Secure Checkout Flow)`")
-        st.markdown("• **Estimated Desktop Domain Authority (DA):** `64/100`" if "city" in clean_url or "furniture" in clean_url else "• **Estimated Desktop Domain Authority (DA):** `42/100`")
+        st.markdown("• **Cross-Channel Integration Anchor:** `Elvex Flow API Payload Sync Complete`")
         
     with col_sig2:
         st.markdown("#### 📉 Strategic Gaps & Market Pressures")
@@ -266,14 +270,14 @@ if st.session_state.submitted:
     
     # Slide 1 Visual
     st.markdown("<div class='slide-red'>", unsafe_allow_html=True)
-    st.markdown("**SLIDE 1: The Digital Bottleneck (Diminishing Marginal Returns in Auction Environments)**")
+    st.markdown(f"**SLIDE 1: {data['prospect_name']} — The Digital Bottleneck (Auction Scaling Pressures)**")
     for bullet in data['slide_1_bullets']:
         st.markdown(f"❌ {bullet}")
     st.markdown("</div>", unsafe_allow_html=True)
         
     # Slide 2 Visual
     st.markdown("<div class='slide-green'>", unsafe_allow_html=True)
-    st.markdown("**SLIDE 2: The Portfolio Effect (Stabilizing Blended Acquisition Costs via Diversified Authority)**")
+    st.markdown("**SLIDE 2: The Cross-Platform Portfolio Multiplier Effect (3.2x Conversion Lift)**")
     for bullet in data['slide_2_bullets']:
         st.markdown(f"📈 {bullet}")
     st.markdown("</div>", unsafe_allow_html=True)

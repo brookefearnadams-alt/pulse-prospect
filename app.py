@@ -289,7 +289,7 @@ with btn_col2:
         st.session_state.url_input = ""
         st.rerun()
 
-# Elvex-Enriched Strategy Database
+# Elvex-Enriched Strategy Database with Full Dark Funnel Suite Included
 mock_database = {
     "cityfurniture": {
         "prospect_name": "CITY Furniture",
@@ -302,14 +302,8 @@ mock_database = {
         "creative_gap": "Dwell time on display assets is under 1.5 seconds. 92% of active creatives focus on margin-diluting discount promo codes instead of brand value storytelling.",
         "competitive_threat": "Rooms To Go, Ashley, Wayfair, and Amazon are running aggressive keyword conquesting ads, artificially inflating bottom-of-funnel bidding auction CPMs.",
         "vulnerability": "Paying premium acquisition rates to harvest intent that someone else built. Operating without a broad-market broadcast layer traps their budget inside volatile digital auctions.",
-        "dark_funnel_summary": "City Furniture benefits from high brand familiarity, but faces severe leaks in the mid-funnel research window. Shoppers default to national brands because local trust assets and non-branded educational assets are not loud enough.",
-        "journey_awareness": "Triggered by life events (moving, back pain, redecorating). Current gap: Deficit in inspiration/educational video content across YouTube/CTV, forcing reliance on transactional weekly circular ads.",
-        "journey_research": "Googling 'best sectional for pets' or checking Google Map Pack profiles. Current gap: High search vulnerability on non-branded queries; store-level reputation profiles are uneven across regional zip codes.",
-        "journey_consideration": "Comparing 2-5 regional showrooms, validation of financing terms and delivery windows. Current gap: Retargeting loops just repeat the same discount promo instead of addressing core buyer objections (durability, setup care).",
-        "journey_decision": "Driven by last-mile delivery confidence and quality reassurance. Current gap: Clear last-mile reliability cues are missing from digital landing pages during checkout sequences.",
-        "trust_plan": "1) Post-Delivery Review Ask: Automate sms triggers 24-72 hours post-delivery split by showroom vs product experience. 2) Video Engine: Deploy 10 short asset files answering sectional size picking and mattress firmness rules. 3) Vignette Testimonials: Package UGC into landing page trust bundles.",
-        "seller_talk_track": "Right now, a huge portion of the market is forming buying opinions about CITY Furniture through untracked channels—YouTube, Google Maps, local referrals, and dark social loops—before they ever click a paid ad. When we invest in visibility and trust earlier via broad-market video flights and targeted objection-handling retargeting, two things scale: your branded organic search volume rises, and your bottom-of-funnel Search and PMax conversion efficiency improves. You lower your overall blended acquisition costs because you stop trying to convince cold buyers at the final expensive auction click."
         "vbr_statement": "Verified cross-platform retail tracking confirms that anchoring localized digital search spend with high-frequency daytime and local news broadcast media blocks drops blended digital Customer Acquisition Cost (CAC) by 24% while driving an immediate 15% surge in high-intent organic brand searches.",
+
         "recommended_mix": "Convergent Mix: 50% Mass Local Linear TV Authority Layers | 30% Hyper-Targeted Connected TV | 20% Search/Social Retargeting Shield",
         "email_subject": "Optimizing CITY Furniture's customer acquisition costs and showroom foot traffic by 22%",
         "email_body": "Hi Team CITY Furniture,\n\nI’ve been tracking your market footprint across South Florida. Our enterprise intelligence analytics engine flags that your digital acquisition layer is heavily leveraged within automated ad auctions, facing intense local keyword conquesting from national scale competitors like Wayfair and Ashley.\n\nWhile your e-commerce retargeting captures immediate intent, a digital-only approach leaves you vulnerable: auction competition is inflating your acquisition costs, and average display ad dwell time has dropped below 1.5 seconds.\n\nOur cross-platform data reveals that regional retailers who anchor their search and social engines with structured daytime and local news media blocks create an insulation layer that reduces digital CAC by 24%, while triggering a 22% increase in verified showroom foot traffic.\n\nI’ve mapped out a 3-slide efficiency blueprint showing how a convergent media allocation will protect CITY Furniture's product margins this quarter. Do you have 10 minutes this Thursday at 2 PM to look over the metrics?\n\nBest,\n[Account Executive Name]",

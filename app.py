@@ -76,7 +76,7 @@ def create_pptx_deck(data, clean_url):
                 p.font.bold = True
                 p.font.color.rgb = RGBColor(30, 58, 138)
                 
-    # ----------------------------------------------------
+      # ----------------------------------------------------
     # SLIDE 2: Consultative Strategic Action Briefing (NO OUTREACH - MAX DATA)
     # ----------------------------------------------------
     slide_2 = prs.slides.add_slide(blank_layout)
@@ -104,21 +104,48 @@ def create_pptx_deck(data, clean_url):
     lp1.font.size = Pt(18)
     lp1.font.bold = True
     lp1.font.color.rgb = RGBColor(30, 58, 138)
+    lp1.space_after = Pt(14)
     
-    lp2 = ltf.add_paragraph()
-    lp2.text = f"\n• Target Cost-Center Optimization Framework:\n{data['vbr_statement']}"
-    lp2.font.size = Pt(11)
-    lp2.space_after = Pt(14)
+    # Target Cost-Center Framework Header
+    lp2_h = ltf.add_paragraph()
+    lp2_h.text = "• Target Cost-Center Optimization Framework:"
+    lp2_h.font.size = Pt(13)
+    lp2_h.font.bold = True
+    lp2_h.font.color.rgb = RGBColor(30, 58, 138)
     
-    lp3 = ltf.add_paragraph()
-    lp3.text = f"• Identified Capital Allocation Leak:\n{data['vulnerability']}"
-    lp3.font.size = Pt(11)
-    lp3.space_after = Pt(14)
+    # Target Cost-Center Framework Body
+    lp2_b = ltf.add_paragraph()
+    lp2_b.text = data['vbr_statement']
+    lp2_b.font.size = Pt(11)
+    lp2_b.font.color.rgb = RGBColor(55, 65, 81)
+    lp2_b.space_after = Pt(14)
     
-    lp4 = ltf.add_paragraph()
-    lp4.text = f"• Proposed Marketing Capital Mix Reallocation:\n{data['recommended_mix']}"
-    lp4.font.size = Pt(11)
-    lp4.font.bold = True
+    # Identified Capital Allocation Leak Header
+    lp3_h = ltf.add_paragraph()
+    lp3_h.text = "• Identified Capital Allocation Leak:"
+    lp3_h.font.size = Pt(13)
+    lp3_h.font.bold = True
+    lp3_h.font.color.rgb = RGBColor(30, 58, 138)
+    
+    # Identified Capital Allocation Leak Body
+    lp3_b = ltf.add_paragraph()
+    lp3_b.text = data['vulnerability']
+    lp3_b.font.size = Pt(11)
+    lp3_b.font.color.rgb = RGBColor(55, 65, 81)
+    lp3_b.space_after = Pt(14)
+    
+    # Proposed Marketing Capital Mix Header
+    lp4_h = ltf.add_paragraph()
+    lp4_h.text = "• Proposed Marketing Capital Mix Reallocation:"
+    lp4_h.font.size = Pt(13)
+    lp4_h.font.bold = True
+    lp4_h.font.color.rgb = RGBColor(30, 58, 138)
+    
+    # Proposed Marketing Capital Mix Body
+    lp4_b = ltf.add_paragraph()
+    lp4_b.text = data['recommended_mix']
+    lp4_b.font.size = Pt(11)
+    lp4_b.font.color.rgb = RGBColor(55, 65, 81)
     
     # Right Column Container - Multi-Platform Content Pillars
     rightBox = slide_2.shapes.add_textbox(Inches(6.8), Inches(1.5), Inches(6.0), Inches(5.5))
@@ -130,38 +157,45 @@ def create_pptx_deck(data, clean_url):
     rp1.font.size = Pt(18)
     rp1.font.bold = True
     rp1.font.color.rgb = RGBColor(30, 58, 138)
+    rp1.space_after = Pt(14)
     
+    # Pillar 1
     rp2 = rtf.add_paragraph()
-    rp2.text = f"\n1. Auction Pressures & Digital Bottlenecks:"
+    rp2.text = "1. Auction Pressures & Digital Bottlenecks"
     rp2.font.bold = True
-    rp2.font.size = Pt(11)
+    rp2.font.size = Pt(13)
+    rp2.font.color.rgb = RGBColor(30, 58, 138)
     for b in data['slide_1_bullets']:
         p_sub = rtf.add_paragraph()
         p_sub.text = f"   - {b}"
         p_sub.font.size = Pt(10)
+        p_sub.font.color.rgb = RGBColor(55, 65, 81)
+    rp2.space_after = Pt(10)
         
+    # Pillar 2
     rp3 = rtf.add_paragraph()
-    rp3.text = f"\n2. Cross-Platform Portfolio Multipliers:"
+    rp3.text = "\n2. Cross-Platform Portfolio Multipliers"
     rp3.font.bold = True
-    rp3.font.size = Pt(11)
+    rp3.font.size = Pt(13)
+    rp3.font.color.rgb = RGBColor(30, 58, 138)
     for b in data['slide_2_bullets']:
         p_sub = rtf.add_paragraph()
         p_sub.text = f"   - {b}"
         p_sub.font.size = Pt(10)
+        p_sub.font.color.rgb = RGBColor(55, 65, 81)
+    rp3.space_after = Pt(10)
         
+    # Pillar 3
     rp4 = rtf.add_paragraph()
-    rp4.text = f"\n3. Efficiency Blueprint & Test-Zone Targets:"
+    rp4.text = "\n3. Efficiency Blueprint & Test-Zone Targets"
     rp4.font.bold = True
-    rp4.font.size = Pt(11)
+    rp4.font.size = Pt(13)
+    rp4.font.color.rgb = RGBColor(30, 58, 138)
     for b in data['slide_3_bullets']:
         p_sub = rtf.add_paragraph()
         p_sub.text = f"   - {b}"
         p_sub.font.size = Pt(10)
-        
-    binary_output = io.BytesIO()
-    prs.save(binary_output)
-    binary_output.seek(0)
-    return binary_output
+        p_sub.font.color.rgb = RGBColor(55, 65, 81)
 
 
 # Top Header Layout

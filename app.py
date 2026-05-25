@@ -142,17 +142,17 @@ def create_pptx_deck(data, clean_url):
     lp4_b.font.size = Pt(11)
     lp4_b.font.color.rgb = RGBColor(55, 65, 81)
     
-    # Right Column Container - Multi-Platform Content Pillars
-    rightBox = slide_2.shapes.add_textbox(Inches(6.8), Inches(1.5), Inches(6.0), Inches(5.5))
+        # Right Column Container - Multi-Platform Content Pillars (Tightened Vertically)
+    rightBox = slide_2.shapes.add_textbox(Inches(6.8), Inches(1.4), Inches(6.0), Inches(5.6))
     rtf = rightBox.text_frame
     rtf.word_wrap = True
     
-    rp1 = rtf.paragraphs[0]
+    rp1 = rtf.paragraphs
     rp1.text = "🎯 Executive Framework Pillars"
     rp1.font.size = Pt(18)
     rp1.font.bold = True
     rp1.font.color.rgb = RGBColor(30, 58, 138)
-    rp1.space_after = Pt(14)
+    rp1.space_after = Pt(8)
     
     # Pillar 1
     rp2 = rtf.add_paragraph()
@@ -160,12 +160,14 @@ def create_pptx_deck(data, clean_url):
     rp2.font.bold = True
     rp2.font.size = Pt(13)
     rp2.font.color.rgb = RGBColor(30, 58, 138)
+    rp2.space_after = Pt(2)
     for b in data['slide_1_bullets']:
         p_sub = rtf.add_paragraph()
         p_sub.text = f"   - {b}"
         p_sub.font.size = Pt(10)
         p_sub.font.color.rgb = RGBColor(55, 65, 81)
-    rp2.space_after = Pt(10)
+        p_sub.space_after = Pt(2)
+    p_sub.space_after = Pt(8) # Space cushion below the complete bullet cluster
         
     # Pillar 2
     rp3 = rtf.add_paragraph()
@@ -173,12 +175,14 @@ def create_pptx_deck(data, clean_url):
     rp3.font.bold = True
     rp3.font.size = Pt(13)
     rp3.font.color.rgb = RGBColor(30, 58, 138)
+    rp3.space_after = Pt(2)
     for b in data['slide_2_bullets']:
         p_sub = rtf.add_paragraph()
         p_sub.text = f"   - {b}"
         p_sub.font.size = Pt(10)
         p_sub.font.color.rgb = RGBColor(55, 65, 81)
-    rp3.space_after = Pt(10)
+        p_sub.space_after = Pt(2)
+    p_sub.space_after = Pt(8) # Space cushion below the complete bullet cluster
         
     # Pillar 3
     rp4 = rtf.add_paragraph()
@@ -186,16 +190,14 @@ def create_pptx_deck(data, clean_url):
     rp4.font.bold = True
     rp4.font.size = Pt(13)
     rp4.font.color.rgb = RGBColor(30, 58, 138)
+    rp4.space_after = Pt(2)
     for b in data['slide_3_bullets']:
         p_sub = rtf.add_paragraph()
         p_sub.text = f"   - {b}"
         p_sub.font.size = Pt(10)
         p_sub.font.color.rgb = RGBColor(55, 65, 81)
-        
-    binary_output = io.BytesIO()
-    prs.save(binary_output)
-    binary_output.seek(0)
-    return binary_output
+        p_sub.space_after = Pt(2)
+
 
 
 

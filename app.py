@@ -207,24 +207,25 @@ if st.session_state.submitted:
     # Text Meta Block
     st.write(f"**Target Account:** {data['prospect_name']}  |  **Market Vertical:** {data['vertical']}  |  **Analytical Framework:** Cost-Center Optimization Index")
     
-        # 1. Scraped Signals Block (Upgraded Enterprise Data Matrix)
+         # 1. Scraped Signals Block (Upgraded Enterprise Data Matrix with Text Wrapping)
     st.markdown("<div class='section-box'>", unsafe_allow_html=True)
     st.markdown(f"### 🕵️‍♂️ Advanced Signal Scrape Matrix: {data['prospect_name'].upper()}")
     
-    # Visual Data Metric Columns
+    # Visual Data Metric Columns (Using st.text_area for forced text wrapping)
     m1, m2, m3, m4 = st.columns(4)
     with m1:
         st.markdown("**💰 Monthly Capital Allocation**")
-        st.code(data['estimated_digital_monthly'])
+        st.text_area("Budget", value=data['estimated_digital_monthly'], height=68, label_visibility="collapsed", disabled=True)
     with m2:
         st.markdown("**📱 Active Social Creative Sets**")
-        st.code(data['meta_ad_count'])
+        st.text_area("Social Footprint", value=data['meta_ad_count'], height=68, label_visibility="collapsed", disabled=True)
     with m3:
         st.markdown("**🎯 Search Automation Engine**")
-        st.code(data['google_ad_types'])
+        st.text_area("Google Channels", value=data['google_ad_types'], height=68, label_visibility="collapsed", disabled=True)
     with m4:
         st.markdown("**⚖️ Market Share Risk Index**")
-        st.error("HIGH VOLATILITY" if "city" in clean_url or "furniture" in clean_url else "ELEVATED RISK")
+        risk_label = "HIGH VOLATILITY" if "city" in clean_url or "furniture" in clean_url else "ELEVATED RISK"
+        st.text_area("Risk Index", value=risk_label, height=68, label_visibility="collapsed", disabled=True)
         
     st.markdown("---")
     
@@ -240,8 +241,8 @@ if st.session_state.submitted:
     with col_sig2:
         st.markdown("#### 📉 Strategic Vulnerabilities & Competitive Gaps")
         st.markdown(f"⚠️ **Market Share Erosion Threat:** {data['competitive_threat']}")
-        st.markdown(f"💡 **Creative Optimization Gap:** {data['creative_gap']}")
-        st.markdown("• **Estimated Digital Share-of-Voice (SOV) Slip:** `下降 14% YoY due to National Bidding Pods`" if "city" in clean_url or "furniture" in clean_url else "• **Estimated Digital Share-of-Voice (SOV) Slip:** `下降 22% YoY vs Venture-Backed Competitors`")
+        st.markdown(f"💡 **Creative Asset Gap:** {data['creative_gap']}")
+        st.markdown("• **Estimated Digital Share-of-Voice (SOV) Slip:** `Drop 14% YoY due to National Bidding Pods`" if "city" in clean_url or "furniture" in clean_url else "• **Estimated Digital Share-of-Voice (SOV) Slip:** `Drop 22% YoY vs Venture-Backed Competitors`")
         
     st.markdown("</div>", unsafe_allow_html=True)
 

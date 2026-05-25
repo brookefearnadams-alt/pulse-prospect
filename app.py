@@ -414,7 +414,6 @@ if st.session_state.submitted:
         # NEW ELEMENT: Elvex Dark Funnel Visibility Matrix (Fully Expanded Research Suite)
     st.markdown("<div class='section-box' style='border-left: 5px solid #7C3AED;'>", unsafe_allow_html=True)
     st.markdown("### 🔮 Elvex Dark Funnel Visibility Matrix")
-    st.caption("Analyzing unmeasurable consumer discovery channels bypassing standard attribution pixels.")
     
     # Macro Status Indicators
     df_col1, df_col2 = st.columns(2)

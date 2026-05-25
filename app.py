@@ -21,15 +21,15 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Helper function to generate deep, multi-data PowerPoint presentation arrays
+# Helper function to generate deep, multi-data PowerPoint presentation arrays (No Email, Max Intel)
 def create_pptx_deck(data, clean_url):
     prs = Presentation()
     prs.slide_width = Inches(13.333)
     prs.slide_height = Inches(7.5)
-    # Using layout index 6 for a clean blank canvas layout slate
     blank_layout = prs.slide_layouts[6]
     
     # ----------------------------------------------------
-    # SLIDE 1: Enterprise Data Scrape & Signal Matrix
+    # Enterprise Data Scrape & Signal Matrix
     # ----------------------------------------------------
     slide_1 = prs.slides.add_slide(blank_layout)
     
@@ -40,18 +40,17 @@ def create_pptx_deck(data, clean_url):
     rect_1.line.fill.background()
     
     txBox_1 = slide_1.shapes.add_textbox(Inches(0.5), Inches(0.15), Inches(12.333), Inches(0.8))
-    p1 = txBox_1.text_frame.paragraphs[0]
-    p1.text = f"{data['prospect_name']} — Enterprise Signal Scrape Matrix"
+    p1 = txBox_1.text_frame.paragraphs
+    p1.text = f"{data['prospect_name']} — Commercial Footprint & Signal Matrix"
     p1.font.size = Pt(26)
     p1.font.bold = True
     p1.font.color.rgb = RGBColor(255, 255, 255)
     
-    # Add Large Data Grid Table Shape (Rows: 7, Columns: 2)
-    x, y, cx, cy = Inches(0.5), Inches(1.5), Inches(12.333), Inches(5.5)
-    table_shape = slide_1.shapes.add_table(7, 2, x, y, cx, cy)
+    # Large Data Grid Table Shape (Rows: 7, Columns: 2)
+    table_shape = slide_1.shapes.add_table(7, 2, Inches(0.5), Inches(1.5), Inches(12.333), Inches(5.5))
     table = table_shape.table
-    table.columns[0].width = Inches(3.5)
-    table.columns[1].width = Inches(8.833)
+    table.columns.width = Inches(3.5)
+    table.columns.width = Inches(8.833)
     
     infra_label = "Google Floodlight Enabled Tracker | TLS 1.3 Certified Checkout" if "city" in clean_url or "furniture" in clean_url else "Klaviyo Direct Event Sync Active | TLS 1.3 Certified Flow"
     
@@ -69,7 +68,7 @@ def create_pptx_deck(data, clean_url):
         for col_idx, cell_text in enumerate(row_content):
             cell = table.cell(row_idx, col_idx)
             cell.text = cell_text
-            p = cell.text_frame.paragraphs[0]
+            p = cell.text_frame.paragraphs
             p.font.size = Pt(12)
             p.font.color.rgb = RGBColor(55, 65, 81)
             if col_idx == 0:
@@ -77,7 +76,7 @@ def create_pptx_deck(data, clean_url):
                 p.font.color.rgb = RGBColor(30, 58, 138)
                 
     # ----------------------------------------------------
-    # SLIDE 2: Consultative Strategic Action Briefing
+    # Consultative Strategic Action Briefing (NO OUTREACH - MAX DATA)
     # ----------------------------------------------------
     slide_2 = prs.slides.add_slide(blank_layout)
     
@@ -88,57 +87,81 @@ def create_pptx_deck(data, clean_url):
     rect_2.line.fill.background()
     
     txBox_2 = slide_2.shapes.add_textbox(Inches(0.5), Inches(0.15), Inches(12.333), Inches(0.8))
-    p2 = txBox_2.text_frame.paragraphs[0]
-    p2.text = f"{data['prospect_name']} — Consultative Account Strategy"
+    p2 = txBox_2.text_frame.paragraphs
+    p2.text = f"{data['prospect_name']} — Consultative Optimization Index"
     p2.font.size = Pt(26)
     p2.font.bold = True
     p2.font.color.rgb = RGBColor(255, 255, 255)
     
-    # Left Box Container - Strategy Pillars (Full Width Framework)
+    # Left Column Container - Operational Strategy & Allocation
     leftBox = slide_2.shapes.add_textbox(Inches(0.5), Inches(1.5), Inches(6.0), Inches(5.5))
     ltf = leftBox.text_frame
     ltf.word_wrap = True
     
-    lp1 = ltf.paragraphs[0]
-    lp1.text = "🎯 Core Optimization Strategy"
-    lp1.font.size = Pt(20)
+    lp1 = ltf.paragraphs
+    lp1.text = "📊 Operational Strategy & Allocation"
+    lp1.font.size = Pt(18)
     lp1.font.bold = True
     lp1.font.color.rgb = RGBColor(30, 58, 138)
     
     lp2 = ltf.add_paragraph()
-    lp2.text = f"\n• Valid Business Reason (VBR):\n{data['vbr_statement']}"
+    lp2.text = f"\n• Target Cost-Center Optimization Framework:\n{data['vbr_statement']}"
     lp2.font.size = Pt(11)
-    lp2.space_after = Pt(10)
+    lp2.space_after = Pt(14)
     
     lp3 = ltf.add_paragraph()
-    lp3.text = f"• Identified Operational Inefficiency:\n{data['vulnerability']}"
+    lp3.text = f"• Identified Capital Allocation Leak:\n{data['vulnerability']}"
     lp3.font.size = Pt(11)
-    lp3.space_after = Pt(10)
+    lp3.space_after = Pt(14)
     
     lp4 = ltf.add_paragraph()
-    lp4.text = f"• Proposed Capital Reallocation Mix:\n{data['recommended_mix']}"
+    lp4.text = f"• Proposed Marketing Capital Mix Reallocation:\n{data['recommended_mix']}"
     lp4.font.size = Pt(11)
     lp4.font.bold = True
     
-    # Right Box Container - Actionable Email Copy Block
+    # Right Column Container - Multi-Platform Content Pillars
     rightBox = slide_2.shapes.add_textbox(Inches(6.8), Inches(1.5), Inches(6.0), Inches(5.5))
     rtf = rightBox.text_frame
     rtf.word_wrap = True
     
-    rp1 = rtf.paragraphs[0]
-    rp1.text = "✉️ Executive Outreach Blueprint"
-    rp1.font.size = Pt(20)
+    rp1 = rtf.paragraphs
+    rp1.text = "🎯 Executive Framework Pillars"
+    rp1.font.size = Pt(18)
     rp1.font.bold = True
     rp1.font.color.rgb = RGBColor(30, 58, 138)
     
     rp2 = rtf.add_paragraph()
-    rp2.text = f"\nSubject: {data['email_subject']}\n\n{data['email_body']}"
-    rp2.font.size = Pt(10)
-    
+    rp2.text = f"\n1. Auction Pressures & Digital Bottlenecks:"
+    rp2.font.bold = True
+    rp2.font.size = Pt(11)
+    for b in data['slide_1_bullets']:
+        p_sub = rtf.add_paragraph()
+        p_sub.text = f"   - {b}"
+        p_sub.font.size = Pt(10)
+        
+    rp3 = rtf.add_paragraph()
+    rp3.text = f"\n2. Cross-Platform Portfolio Multipliers:"
+    rp3.font.bold = True
+    rp3.font.size = Pt(11)
+    for b in data['slide_2_bullets']:
+        p_sub = rtf.add_paragraph()
+        p_sub.text = f"   - {b}"
+        p_sub.font.size = Pt(10)
+        
+    rp4 = rtf.add_paragraph()
+    rp4.text = f"\n3. Efficiency Blueprint & Test-Zone Targets:"
+    rp4.font.bold = True
+    rp4.font.size = Pt(11)
+    for b in data['slide_3_bullets']:
+        p_sub = rtf.add_paragraph()
+        p_sub.text = f"   - {b}"
+        p_sub.font.size = Pt(10)
+        
     binary_output = io.BytesIO()
     prs.save(binary_output)
     binary_output.seek(0)
     return binary_output
+
 
 # Top Header Layout
 st.markdown("<p class='main-title'>📡 OMNIPULSE AI</p>", unsafe_allow_html=True)

@@ -198,4 +198,36 @@ if st.session_state.submitted:
     for bullet in data['slide_3_bullets']:
         st.markdown(f"🛠️ {bullet}")
     st.markdown("</div>", unsafe_allow_html=True)
+# Construct the download text block
+download_text = f"""==================================================
+EXECUTIVE PRESENTATION CONTENT ARCHITECTURE
+==================================================
+Target Account: {data['prospect_name']}
+Proposed Capital Reallocation Mix: {data['recommended_mix']}
+
+--------------------------------------------------
+SLIDE 1: The Digital Bottleneck 
+(Diminishing Marginal Returns in Auction Environments)
+--------------------------------------------------
+""" + "\n".join([f"❌ {b}" for b in data['slide_1_bullets']]) + f"""
+
+--------------------------------------------------
+SLIDE 2: The Portfolio Effect 
+(Stabilizing Blended Acquisition Costs via Diversified Authority)
+--------------------------------------------------
+""" + "\n".join([f"📈 {b}" for b in data['slide_2_bullets']]) + f"""
+
+--------------------------------------------------
+SLIDE 3: The Efficiency Blueprint 
+(Capital Reallocation and Margin Protection)
+--------------------------------------------------
+""" + "\n".join([f"🛠️ {b}" for b in data['slide_3_bullets']])
+
+# Render the download button in Streamlit
+st.download_button(
+    label="💾 Download Presentation Deck Script (TXT)",
+    data=download_text,
+    file_name=f"{data['prospect_name'].lower().replace(' ', '_')}_presentation_deck.txt",
+    mime="text/plain"
+)
 

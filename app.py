@@ -16,7 +16,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Top Header Layout (Stacked for better screen space)
+# Top Header Layout
 st.markdown("<p class='main-title'>📡 OMNIPULSE AI</p>", unsafe_allow_html=True)
 st.markdown("<p class='subtitle'>The Official Media Sales Intelligence Platform — Powered by Enterprise Data & Elvex Flows</p>", unsafe_allow_html=True)
 
@@ -27,8 +27,7 @@ st.sidebar.success("● Knowledge Base: Active")
 st.sidebar.info("● Database Year: 2026")
 st.sidebar.markdown("---")
 st.sidebar.markdown("**Demo Input Mapping:**")
-st.sidebar.write("- Type **'ecorest'** for the premium bedding analysis.")
-st.sidebar.write("- Type **'cityfurniture'** or any other URL for the retail scenario.")
+st.sidebar.write("This app will automatically detect 'cityfurniture' or 'ecorest' in your URL and pull custom deep intelligence.")
 
 # Performance Tickers
 t1, t2, t3, t4 = st.columns(4)
@@ -47,15 +46,45 @@ prospect_url = st.text_input(
 )
 submit_button = st.button("Generate Deep Intelligence Briefing", type="primary")
 
-# Database Configuration
+# Heavy-Hitting Media Database
 mock_database = {
+    "cityfurniture": {
+        "prospect_name": "City Furniture",
+        "vertical": "Home Furnishings / Regional Retailer",
+        "estimated_digital_monthly": "\$145,000 - \$180,000 (Local/Regional Spender)",
+        "meta_ad_count": "84 Active Creative Variations",
+        "google_ad_types": "Google Performance Max (PMax), Local Inventory Ads, YouTube Pre-Roll",
+        "pixel_detections": "Meta Pixel (Advanced Conversions), Google Floodlight, Pinterest Tag, Criteo Retargeting Engine",
+        "creative_gap": "92% of active ads rely on price-cut imagery (e.g., 'Save \$500') and holiday promo banners. Severe deficit in premium lifestyle video storytelling, design consulting spotlights, and family/home emotional triggers.",
+        "competitive_threat": "National giants (Rooms To Go and Ashley Furniture) have increased local programmatic search bids by 54% this quarter, deliberately outbidding City Furniture on localized long-tail search phrases like 'modern sectional near me'.",
+        "vulnerability": "Extreme exposure to digital auction manipulation during peak sales windows. Digital-only retargeting is trapping them in a conversion bottleneck where their Cost Per Acquisition (CPA) is up 41% YoY, killing non-holiday margins.",
+        "vbr_statement": "Secure regional campaign tracking confirms that regional furniture retailers anchoring digital spend with high-frequency Early Fringe, Access, and Early News Linear TV see an immediate 21% surge in direct web conversions and an 18% lift in showroom foot traffic, while insulating their digital budgets from national auction bidding spikes.",
+        "recommended_mix": "50% High-Index Local Linear (News/Access) | 30% Connected TV (CTV) Zip-Code Targets | 20% Premium Desktop Sponsorships",
+        "email_subject": "Bypassing national ad auction inflation for City Furniture",
+        "email_body": "Hi Team City Furniture,\n\nI’ve been studying your regional digital ad footprints. Our intelligence engine flagged that you currently have 84 active ad variations running across Meta alongside a heavy Google PMax setup.\n\nWhile your product retargeting is highly efficient, a digital-only approach leaves you vulnerable. National conglomerates (Rooms To Go/Ashley) have flooded local zip codes with a 54% increase in programmatic bids, driving your digital customer acquisition costs up 41% YoY.\n\nOur cross-platform data shows that regional retailers anchoring their digital spend with strategic Early Fringe and Access television blocks build a local 'market shield.' This multi-screen baseline increases direct web conversions by 21% and completely bypasses expensive digital bidding wars.\n\nI’ve mapped out a 3-slide strategic blueprint showing how this unified lift will protect City Furniture’s margins this quarter. Do you have 10 minutes this Thursday at 2 PM for a brief look at the data?\n\nBest,\n[Account Executive Name]",
+        "slide_1_bullets": [
+            "Auction Pressures: National brands have inflated local digital bidding costs by 54% this quarter.",
+            "Margin Erosion: City Furniture's digital acquisition costs (CPA) have spiked 41% YoY due to ad auction wars.",
+            "Creative Fatigue: Over-reliance on transactional price-cut banners ignores upper-funnel emotional storytelling."
+        ],
+        "slide_2_bullets": [
+            "The Screen Blanket: Early Fringe, Access, and Local News lock down the local household decision-makers.",
+            "The Halo Conversion: Unified cross-screen flights trigger an immediate 21% surge in high-intent organic web searches.",
+            "Showroom Lift: Broadcast presence acts as an offline anchor, driving a proven 18% lift in physical store traffic."
+        ],
+        "slide_3_bullets": [
+            "The Guardrail Mix: Transitioning to 50% premium local linear, 30% hyper-targeted CTV, and 20% digital sponsorships.",
+            "Unified Tracking: Measuring success through real-time web traffic correlation during broadcast windows.",
+            "Next Steps: 10-minute strategy alignment to deploy localized market test zones."
+        ]
+    },
     "ecorest": {
         "prospect_name": "EcoRest Bedding",
         "vertical": "DTC Home Goods / Premium Mattress",
         "estimated_digital_monthly": "\$45,000 - \$60,000",
         "meta_ad_count": "34 Active Creative Variations",
         "google_ad_types": "Performance Max (Heavy Search & Shopping focus)",
-        "pixel_detections": "Meta Pixel (Custom Conversions), Google Tag Manager, TikTok Pixel",
+        "pixel_detections": "Meta Pixel, Google Tag Manager, TikTok Pixel, Klaviyo Tracking",
         "creative_gap": "Over-indexing on text-heavy testimonial static ads. Complete absence of high-production video storytelling or lifestyle video formats to build brand equity.",
         "competitive_threat": "Casper and Purple Mattresses are currently running localized geotargeted digital conquests in this market, outbidding EcoRest for the keyword 'organic latex mattress' by 42%.",
         "vulnerability": "Heavy reliance on Meta and Google Ads is causing a 38% YoY inflation in their Digital Customer Acquisition Costs (CAC), severely squeezing net margins on their organic latex mattress line.",
@@ -66,53 +95,37 @@ mock_database = {
         "slide_1_bullets": ["Digital Inflation: EcoRest is absorbing a 38% YoY increase in Meta/Google acquisition costs.", "Keyword Conquesting: Competitors are outbidding EcoRest by 42% on high-intent local search phrases.", "Creative Bottleneck: 34 active Meta ads rely entirely on static testimonials, ignoring screen-based video storytelling."],
         "slide_2_bullets": ["The Halo Effect: Daytime broadcast presence drives immediate mobile/desktop organic brand searches.", "CAC Reduction: Proven 24% decrease in digital acquisition costs by stabilizing competitive auction dependency.", "Audience Capture: Reaching premium 35-64 homeowners who own 80% of local premium home assets."],
         "slide_3_bullets": ["Efficiency Mix: Deploying a 60% Daytime Linear flight paired with high-impact CTV retargeting.", "Pixel Sync: Utilizing existing Meta pixels to retarget consumers exposed to our local broadcast windows.", "Next Steps: Reviewing customized local zone maps on Thursday."]
-    },
-    "default": {
-        "prospect_name": "City Furniture",
-        "vertical": "Home Furnishings / Regional Retailer",
-        "estimated_digital_monthly": "\$85,000 - \$120,000",
-        "meta_ad_count": "52 Active Ad Variations",
-        "google_ad_types": "Local Inventory Ads, Performance Max, Youtube Pre-Roll",
-        "pixel_detections": "Meta Pixel, Google Floodlight, Pinterest Tag, Criteo Retargeting",
-        "creative_gap": "Heavy dependence on promotional sales banners and price-cut imagery. Significant lack of upper-funnel storytelling that emphasizes design consulting or financing ease.",
-        "competitive_threat": "National chains (Rooms To Go, Ashley Furniture) are saturating regional zip codes with automated programmatic bids, forcing local direct players into high-cost bidding environments.",
-        "vulnerability": "Current digital tactics are trapped in an aggressive programmatic retargeting loop. This causes audience fatigue and drops online return-on-ad-spend (ROAS) during non-holiday periods.",
-        "vbr_statement": "Localized market data indicates that backing regional retail digital campaigns with consistent Early Fringe and Access Linear TV blocks increases direct digital conversions by 21% while bypassing localized digital auction bidding peaks.",
-        "recommended_mix": "50% Early Fringe & Access Linear | 30% Connected TV Geotargets | 20% Premium Desktop Sponsorships",
-        "email_subject": "Bypassing local digital ad inflation for City Furniture",
-        "email_body": "Hi Team City Furniture,\n\nI’ve been studying your regional digital ad footprints. Your current mix of Local Inventory Ads and active Meta sets effectively targets immediate shoppers, but it exposes your budget to heavy holiday auction inflation from national furniture conglomerates.\n\nOur cross-platform performance tracking reveals that integrating Early Fringe and Access linear windows builds an immediate market baseline that improves digital conversion efficiency by 21%.\n\nThis multi-platform layer offsets audience fatigue and locks in market share before competitors can outbid you online.\n\nI have a 3-slide strategic blueprint ready for City Furniture outlining this lift. Do you have 10 minutes for a brief call this week?\n\nBest,\n[Account Executive Name]",
-        "slide_1_bullets": ["Auction Pressures: Facing continuous digital auction bidding inflation driven by national franchise spend.", "Audience Fatigue: High ad frequency with static promotional banners reduces overall click-through rates.", "Placement Crutch: Retargeting bottom-funnel shoppers while losing mid-funnel consideration."],
-        "slide_2_bullets": ["The Reach Engine: Early Fringe and Access linear captures the localized household decision-makers.", "Conversion Lift: Proven 21% increase in web direct conversions when broadcast pairs with digital campaigns.", "Auction Protection: Broad market authority lowers reliance on expensive competitive search bidding terms."],
-        "slide_3_bullets": ["The Blueprint: A balanced mix of 50% high-index local linear combined with precision CTV geotargets.", "Attribution Tracking: Deploying immediate post-air lift models to measure real-time website traffic spikes.", "Action Item: 10-minute multi-screen alignment strategy brief."]
     }
 }
 
-# Output Logic Block
+# Smart Input Matching Logic
 if submit_button:
     with st.spinner("Processing digital footprint..."):
-        time.sleep(1.0)
-        
+            time.sleep(1.0)
+    
+    # Clean up the input string to match keywords anywhere in the typed text
     clean_url = prospect_url.lower()
-    if "ecorest" in clean_url or "bedding" in clean_url:
+    
+    if "city" in clean_url or "furniture" in clean_url:
+        data = mock_database["cityfurniture"]
+    elif "ecorest" in clean_url or "bedding" in clean_url:
         data = mock_database["ecorest"]
     else:
-        data = mock_database["default"]
+        # If they type something else, default to City Furniture to ensure it looks amazing for the live pitch
+        data = mock_database["cityfurniture"]
         
     st.markdown("---")
     st.success(f"⚡ STRATEGIC PROFILE COMPILED FOR: {data['prospect_name'].upper()}")
     
     # Text Meta Block
-    st.write(f"**Target Client:** {data['prospect_name']}  |  **Industry Vertical:** {data['vertical']}  |  **Data Grounding:** 98% Confidence")
+    st.write(f"**Target Client:** {data['prospect_name']}  |  **Industry Vertical:** {data['vertical']}  |  **Data Grounding Source:** Elvex Media Index")
     
-    # 1. Scraped Signals Block (Full Width Panel)
-    st.markdown("<div class='section-box'>", unsafe_allow_html=True)
-    st.markdown("### 🕵️‍♂️ Scraped Digital Signals & Competitive Intelligence")
     # 1. Scraped Signals Block (Full Width Panel)
     st.markdown("<div class='section-box'>", unsafe_allow_html=True)
     st.markdown("### 🕵️‍♂️ Scraped Digital Signals & Competitive Intelligence")
     st.write(f"• **Est. Monthly Digital Spend:** {data['estimated_digital_monthly']}")
     st.write(f"• **Active Ad Footprint:** {data['meta_ad_count']}")
-    st.write(f"• **Google Channels:** {data['google_ad_types']}")
+    st.write(f"• **Google Channels Found:** {data['google_ad_types']}")
     st.write(f"• **Active Tracking Pixels Detected:** {data['pixel_detections']}")
     st.write(f"• ⚠️ **Competitive Threat:** {data['competitive_threat']}")
     st.write(f"• 💡 **Creative Optimization Gap:** {data['creative_gap']}")
@@ -128,7 +141,7 @@ if submit_button:
     st.text_input("Recommended Subject Line:", data['email_subject'])
     st.text_area("Generated Consultative Copy (Ready to Copy/Paste):", data['email_body'], height=250)
     
-    # 4. Presentation Slides Content (Stacked Vertically for Perfect Scannability)
+    # 4. Presentation Slides Content
     st.markdown("---")
     st.markdown("### 📊 Automated Multi-Tactical Pitch Presentation Content")
     st.write(f"**Recommended Cross-Platform Allocation:** {data['recommended_mix']}")
@@ -154,3 +167,4 @@ if submit_button:
     for bullet in data['slide_3_bullets']:
         st.markdown(f"🛠️ {bullet}")
     st.markdown("</div>", unsafe_allow_html=True)
+

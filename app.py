@@ -29,9 +29,9 @@ def create_pptx_deck(data):
     blank_layout = prs.slide_layouts[6] # completely blank layout node
     
     slides_config = [
-        {"title": "Slide 1: Diminishing Marginal Returns in Auction Environments", "bullets": data['slide_1_bullets'], "color": RGBColor(239, 68, 68)},
-        {"title": "Slide 2: The Portfolio Effect (Stabilizing Acquisition Costs)", "bullets": data['slide_2_bullets'], "color": RGBColor(16, 185, 129)},
-        {"title": "Slide 3: The Efficiency Blueprint (Capital Reallocation Mix)", "bullets": data['slide_3_bullets'], "color": RGBColor(59, 130, 246)}
+        {"title": "Diminishing Marginal Returns in Auction Environments", "bullets": data['slide_1_bullets'], "color": RGBColor(239, 68, 68)},
+        {"title": "The Portfolio Effect (Stabilizing Acquisition Costs)", "bullets": data['slide_2_bullets'], "color": RGBColor(16, 185, 129)},
+        {"title": "The Efficiency Blueprint (Capital Reallocation Mix)", "bullets": data['slide_3_bullets'], "color": RGBColor(59, 130, 246)}
     ]
     
     for config in slides_config:

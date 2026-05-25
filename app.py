@@ -189,17 +189,15 @@ mock_database = {
 }
 
 # Smart Input Matching Logic
-    # Clean up the input string to match keywords anywhere in the typed text
-    clean_url = prospect_url.lower()
+        clean_url = prospect_url.lower()
     
-    # Priority 1: Check for City Furniture first to prevent .com overlap
     if "city" in clean_url or "furniture" in clean_url:
         data = mock_database["cityfurniture"]
     elif "ecorest" in clean_url or "bedding" in clean_url:
         data = mock_database["ecorest"]
     else:
-        # Default fallback to guarantee a great presentation layout
         data = mock_database["cityfurniture"]
+
 
         
     st.markdown("---")

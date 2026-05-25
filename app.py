@@ -29,6 +29,42 @@ def create_pptx_deck(data, clean_url):
     blank_layout = prs.slide_layouts[6]
     
     # ----------------------------------------------------
+    # NEW INSERTION: SLIDE 0 - Institutional Title Slide
+    # ----------------------------------------------------
+    title_slide = prs.slides.add_slide(blank_layout)
+    
+    # Full Screen Deep Blue Corporate Background Card
+    bg_rect = title_slide.shapes.add_shape(1, Inches(0), Inches(0), Inches(13.333), Inches(7.5))
+    bg_rect.fill.solid()
+    bg_rect.fill.fore_color.rgb = RGBColor(30, 58, 138) # Corporate Deep Dark Blue
+    bg_rect.line.fill.background()
+    
+    # Main Platform Title Text Container
+    title_box = title_slide.shapes.add_textbox(Inches(1.0), Inches(2.2), Inches(11.333), Inches(1.5))
+    tf_title = title_box.text_frame
+    p_title = tf_title.paragraphs[0]
+    p_title.text = "📡 OMNIPULSE AI — ACCOUNT BRIEFING"
+    p_title.font.size = Pt(40)
+    p_title.font.bold = True
+    p_title.font.color.rgb = RGBColor(255, 255, 255) # Pure White
+    
+    # Custom Prospect Subtitle Target Container
+    sub_box = title_slide.shapes.add_textbox(Inches(1.0), Inches(3.8), Inches(11.333), Inches(2.0))
+    tf_sub = sub_box.text_frame
+    tf_sub.word_wrap = True
+    
+    p_sub1 = tf_sub.paragraphs[0]
+    p_sub1.text = f"Strategic Cost-Center & Margin Diagnostic for: {data['prospect_name'].upper()}"
+    p_sub1.font.size = Pt(20)
+    p_sub1.font.color.rgb = RGBColor(16, 185, 129) # Emerald Green Accent Label
+    p_sub1.space_after = Pt(14)
+    
+    p_sub2 = tf_sub.add_paragraph()
+    p_sub2.text = f"Framework Allocation Mix: {data['recommended_mix']}\nPowered by Enterprise Intelligence Data & Elvex Orchestration Flows"
+    p_sub2.font.size = Pt(13)
+    p_sub2.font.color.rgb = RGBColor(209, 213, 219) # Light Gray Meta Copy
+
+    # ----------------------------------------------------
     # SLIDE 1: Enterprise Data Scrape & Signal Matrix
     # ----------------------------------------------------
     slide_1 = prs.slides.add_slide(blank_layout)

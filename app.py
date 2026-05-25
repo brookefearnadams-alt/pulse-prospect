@@ -40,8 +40,10 @@ def create_pptx_deck(data, clean_url):
     rect_1.line.fill.background()
     
     txBox_1 = slide_1.shapes.add_textbox(Inches(0.5), Inches(0.15), Inches(12.333), Inches(0.8))
-    p1 = txBox_1.text_frame.paragraphs
+    p1 = txBox_1.text_frame.paragraphs[0]
     p1.text = f"{data['prospect_name']} — Commercial Footprint & Signal Matrix"
+
+
     p1.font.size = Pt(26)
     p1.font.bold = True
     p1.font.color.rgb = RGBColor(255, 255, 255)
@@ -87,8 +89,9 @@ def create_pptx_deck(data, clean_url):
     rect_2.line.fill.background()
     
     txBox_2 = slide_2.shapes.add_textbox(Inches(0.5), Inches(0.15), Inches(12.333), Inches(0.8))
-    p2 = txBox_2.text_frame.paragraphs
-    p2.text = f"{data['prospect_name']} — Consultative Optimization Index"
+    p2 = txBox_2.text_frame.paragraphs[0]
+    p2.text = f"{data['prospect_name']} — Consultative Account Strategy"
+
     p2.font.size = Pt(26)
     p2.font.bold = True
     p2.font.color.rgb = RGBColor(255, 255, 255)

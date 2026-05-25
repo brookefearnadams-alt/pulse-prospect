@@ -27,55 +27,55 @@ st.sidebar.success("● Knowledge Base: Active")
 st.sidebar.info("● Database Year: 2026")
 st.sidebar.markdown("---")
 st.sidebar.markdown("**Demo Input Mapping:**")
-st.sidebar.write("This app will automatically detect 'cityfurniture' or 'ecorest' in your URL and pull custom deep intelligence.")
+st.sidebar.write("This app automatically detects 'cityfurniture' or 'ecorest' in your URL and pulls custom business-level intelligence.")
 
 # Performance Tickers
 t1, t2, t3, t4 = st.columns(4)
-t1.metric(label="Average CPA Lift", value="-24%")
+t1.metric(label="Average CPA Efficiency Lift", value="-24%")
 t2.metric(label="Direct Revenue Capture", value="+31%")
 t3.metric(label="Agency RFPs Bypassed", value="142")
-t4.metric(label="Pitch Build Time", value="12 Sec")
+t4.metric(label="Briefing Build Time", value="12 Sec")
 
 st.markdown("###")
 
 # User Input Panel
-st.markdown("### 🔍 Deep Web Scrape & Local Media Diagnostic")
+st.markdown("### 🔍 Enterprise Cost-Center & Margin Diagnostic")
 prospect_url = st.text_input(
     "Input Target Prospect Website URL:", 
     value="https://www.cityfurniture.com/"
 )
-submit_button = st.button("Generate Deep Intelligence Briefing", type="primary")
+submit_button = st.button("Generate Strategic Financial Briefing", type="primary")
 
-# Heavy-Hitting Media Database
+# Business-First Strategy Database
 mock_database = {
     "cityfurniture": {
         "prospect_name": "City Furniture",
         "vertical": "Home Furnishings / Regional Retailer",
-        "estimated_digital_monthly": "\$145,000 - \$180,000 (Local/Regional Spender)",
+        "estimated_digital_monthly": "\$145,000 - \$180,000 (Local/Regional Capital Allocation)",
         "meta_ad_count": "84 Active Creative Variations",
         "google_ad_types": "Google Performance Max (PMax), Local Inventory Ads, YouTube Pre-Roll",
         "pixel_detections": "Meta Pixel (Advanced Conversions), Google Floodlight, Pinterest Tag, Criteo Retargeting Engine",
-        "creative_gap": "92% of active ads rely on price-cut imagery (e.g., 'Save \$500') and holiday promo banners. Severe deficit in premium lifestyle video storytelling, design consulting spotlights, and family/home emotional triggers.",
-        "competitive_threat": "National giants (Rooms To Go and Ashley Furniture) have increased local programmatic search bids by 54% this quarter, deliberately outbidding City Furniture on localized long-tail search phrases like 'modern sectional near me'.",
-        "vulnerability": "Extreme exposure to digital auction manipulation during peak sales windows. Digital-only retargeting is trapping them in a conversion bottleneck where their Cost Per Acquisition (CPA) is up 41% YoY, killing non-holiday margins.",
-        "vbr_statement": "Secure regional campaign tracking confirms that regional furniture retailers anchoring digital spend with high-frequency Early Fringe, Access, and Early News Linear TV see an immediate 21% surge in direct web conversions and an 18% lift in showroom foot traffic, while insulating their digital budgets from national auction bidding spikes.",
-        "recommended_mix": "50% High-Index Local Linear (News/Access) | 30% Connected TV (CTV) Zip-Code Targets | 20% Premium Desktop Sponsorships",
-        "email_subject": "Bypassing national ad auction inflation for City Furniture",
-        "email_body": "Hi Team City Furniture,\n\nI’ve been studying your regional digital ad footprints. Our intelligence engine flagged that you currently have 84 active ad variations running across Meta alongside a heavy Google PMax setup.\n\nWhile your product retargeting is highly efficient, a digital-only approach leaves you vulnerable. National conglomerates (Rooms To Go/Ashley) have flooded local zip codes with a 54% increase in programmatic bids, driving your digital customer acquisition costs up 41% YoY.\n\nOur cross-platform data shows that regional retailers anchoring their digital spend with strategic Early Fringe and Access television blocks build a local 'market shield.' This multi-screen baseline increases direct web conversions by 21% and completely bypasses expensive digital bidding wars.\n\nI’ve mapped out a 3-slide strategic blueprint showing how this unified lift will protect City Furniture’s margins this quarter. Do you have 10 minutes this Thursday at 2 PM for a brief look at the data?\n\nBest,\n[Account Executive Name]",
+        "creative_gap": "92% of marketing assets are tied directly to margin-diluting discount codes and price-cut promotional inventory. Significant deficit in equity-building assets that protect long-term gross product margins.",
+        "competitive_threat": "National scale conglomerates have increased regional ad auction spending by 54% this quarter, artificially driving up customer acquisition inflation and squeezing regional retail operating income.",
+        "vulnerability": "Severe customer acquisition cost (CAC) inflation. Relying exclusively on immediate digital feedback loops has trapped customer acquisition within a highly competitive auction model, leading to a 41% YoY increase in conversion costs.",
+        "vbr_statement": "Historical multi-market case studies demonstrate that regional retail operations that insulate their digital customer acquisition pipelines with a broad-market authority baseline achieve a 21% reduction in overall digital customer acquisition costs (CAC). This structural pivot stabilizes bottom-line margins by reducing direct dependency on hyper-inflated, auction-based bidding platforms.",
+        "recommended_mix": "50% Market Authority Baselines (Mass Media) | 30% Mid-Funnel Localized Geotargeting | 20% Premium Digital Integration",
+        "email_subject": "Stabilizing City Furniture's customer acquisition costs and protecting product margins",
+        "email_body": "Hi Team City Furniture,\n\nI’ve been reviewing City Furniture’s regional customer acquisition footprint. Our enterprise analytics dashboard flags that your current digital pipeline is heavily leveraged within automated ad auctions, managing roughly 84 active creative variations across standard channels.\n\nWhile this model efficiently captures low-hanging demand, it introduces a severe financial vulnerability: national competitors have increased local auction bids by 54% this quarter, driving your customer acquisition costs (CAC) up an estimated 41% YoY and putting pressure on net operating margins.\n\nOur cross-platform financial data demonstrates that regional retailers who anchor their digital acquisition engines with a broad-market authority baseline reduce overall digital CAC by 21%. This approach shifts your budget away from volatile, reactive bidding environments and locks in a predictable market share baseline.\n\nI have put together a 3-slide operational blueprint detailing how this mix adjustment will stabilize your acquisition costs this quarter. Do you have 10 minutes this Thursday at 2 PM for a brief, business-level look at the numbers?\n\nBest,\n[Account Executive Name]",
         "slide_1_bullets": [
-            "Auction Pressures: National brands have inflated local digital bidding costs by 54% this quarter.",
-            "Margin Erosion: City Furniture's digital acquisition costs (CPA) have spiked 41% YoY due to ad auction wars.",
-            "Creative Fatigue: Over-reliance on transactional price-cut banners ignores upper-funnel emotional storytelling."
+            "The Capital Inefficiency: Over-allocating budget to digital ad auctions has exposed City Furniture to a 41% YoY increase in customer acquisition costs (CAC).",
+            "Auction Vulnerability: National corporate spenders have inflated regional search engine bidding costs by 54%, eating into product net margins.",
+            "Margin Dilution: Heavy reliance on price-cut digital creative signals to consumers that the brand relies on continuous discounting rather than intrinsic value."
         ],
         "slide_2_bullets": [
-            "The Screen Blanket: Early Fringe, Access, and Local News lock down the local household decision-makers.",
-            "The Halo Conversion: Unified cross-screen flights trigger an immediate 21% surge in high-intent organic web searches.",
-            "Showroom Lift: Broadcast presence acts as an offline anchor, driving a proven 18% lift in physical store traffic."
+            "The Market Shield: Re-establishing broad-market brand equity builds a proprietary consumer consideration pipeline outside of ad platforms.",
+            "The Portfolio Effect: Transitioning away from pure-play digital bidding yields a proven 21% reduction in total blended acquisition costs.",
+            "Showroom Asset Optimization: Broad geographic presence drives an 18% lift in showroom asset utilization and floor traffic."
         ],
-        "slide_3_bullets": [
-            "The Guardrail Mix: Transitioning to 50% premium local linear, 30% hyper-targeted CTV, and 20% digital sponsorships.",
-            "Unified Tracking: Measuring success through real-time web traffic correlation during broadcast windows.",
-            "Next Steps: 10-minute strategy alignment to deploy localized market test zones."
+            "slide_3_bullets": [
+            "The Allocation Reset: Diversifying capital allocations into a structured mix of 50% broad-market authority, 30% targeted streaming, and 20% premium digital integrations.",
+            "Attribution Alignment: Measuring success via enterprise web baseline traffic lifts and total blended marketing efficiency ratios (MER) rather than isolated click-through tracking.",
+            "Strategic Next Step: A 10-minute executive alignment meeting to review local market cost-insulation test zones."
         ]
     },
     "ecorest": {
@@ -93,17 +93,24 @@ mock_database = {
         "email_subject": "Optimizing EcoRest's digital acquisition efficiency by 24%",
         "email_body": "Hi Team EcoRest,\n\nI’ve been tracking your impressive digital presence for your organic latex mattress line. Our intelligence engine flagged that you are currently managing 34 active creative variations on Meta, heavily leaning into Performance Max channels.\n\nWhile this captures baseline demand, running a digital-only acquisition strategy right now means you are highly exposed. Competitors like Casper are currently outbidding you by 42% locally on key search phrases, driving up your digital CAC by 38% YoY.\n\nOur cross-platform data shows that local brands pairing active digital with strategic daytime Linear TV see an average 24% drop in digital CAC. This builds a protective 'brand shield' around your search keywords.\n\nI’ve put together a 3-slide efficiency blueprint tailored to your active pixel profiles. Do you have 10 minutes this Thursday at 2 PM to review our data?\n\nBest,\n[Account Executive Name]",
         "slide_1_bullets": ["Digital Inflation: EcoRest is absorbing a 38% YoY increase in Meta/Google acquisition costs.", "Keyword Conquesting: Competitors are outbidding EcoRest by 42% on high-intent local search phrases.", "Creative Bottleneck: 34 active Meta ads rely entirely on static testimonials, ignoring screen-based video storytelling."],
-        "slide_2_bullets": ["The Halo Effect: Daytime broadcast presence drives immediate mobile/desktop organic brand searches.", "CAC Reduction: Proven 24% decrease in digital acquisition costs by stabilizing competitive auction dependency.", "Audience Capture: Reaching premium 35-64 homeowners who own 80% of local premium home assets."],
-        "slide_3_bullets": ["Efficiency Mix: Deploying a 60% Daytime Linear flight paired with high-impact CTV retargeting.", "Pixel Sync: Utilizing existing Meta pixels to retarget consumers exposed to our local broadcast windows.", "Next Steps: Reviewing customized local zone maps on Thursday."]
+"slide_2_bullets": [
+            "The Halo Effect: Daytime broadcast presence drives immediate mobile/desktop organic brand searches.", 
+            "CAC Reduction: Proven 24% decrease in digital acquisition costs by stabilizing competitive auction dependency.", 
+            "Audience Capture: Reaching premium 35-64 homeowners who own 80% of local premium home assets."
+        ],
+        "slide_3_bullets": [
+            "Efficiency Mix: Deploying a 60% Daytime Linear flight paired with high-impact CTV retargeting.", 
+            "Pixel Sync: Utilizing existing Meta pixels to retarget consumers exposed to our local broadcast windows.", 
+            "Next Steps: Reviewing customized local zone maps on Thursday."
+        ]
     }
 }
 
 # Smart Input Matching Logic
 if submit_button:
-    with st.spinner("Processing digital footprint..."):
-            time.sleep(1.0)
-    
-    # Clean up the input string to match keywords anywhere in the typed text
+    with st.spinner("Processing economic and digital footprint metrics..."):
+        time.sleep(1.0)
+        
     clean_url = prospect_url.lower()
     
     if "city" in clean_url or "furniture" in clean_url:
@@ -111,30 +118,29 @@ if submit_button:
     elif "ecorest" in clean_url or "bedding" in clean_url:
         data = mock_database["ecorest"]
     else:
-        # If they type something else, default to City Furniture to ensure it looks amazing for the live pitch
         data = mock_database["cityfurniture"]
         
     st.markdown("---")
-    st.success(f"⚡ STRATEGIC PROFILE COMPILED FOR: {data['prospect_name'].upper()}")
+    st.success(f"⚡ STRATEGIC ACCOUNT BRIEFING COMPILED FOR: {data['prospect_name'].upper()}")
     
     # Text Meta Block
-    st.write(f"**Target Client:** {data['prospect_name']}  |  **Industry Vertical:** {data['vertical']}  |  **Data Grounding Source:** Elvex Media Index")
+    st.write(f"**Target Account:** {data['prospect_name']}  |  **Market Vertical:** {data['vertical']}  |  **Analytical Framework:** Cost-Center Optimization Index")
     
     # 1. Scraped Signals Block (Full Width Panel)
     st.markdown("<div class='section-box'>", unsafe_allow_html=True)
-    st.markdown("### 🕵️‍♂️ Scraped Digital Signals & Competitive Intelligence")
-    st.write(f"• **Est. Monthly Digital Spend:** {data['estimated_digital_monthly']}")
-    st.write(f"• **Active Ad Footprint:** {data['meta_ad_count']}")
-    st.write(f"• **Google Channels Found:** {data['google_ad_types']}")
-    st.write(f"• **Active Tracking Pixels Detected:** {data['pixel_detections']}")
-    st.write(f"• ⚠️ **Competitive Threat:** {data['competitive_threat']}")
-    st.write(f"• 💡 **Creative Optimization Gap:** {data['creative_gap']}")
+    st.markdown("### 🕵️‍♂️ Scraped Commercial Footprint & Competitive Market Signals")
+    st.write(f"• **Estimated Digital Capital Deployment:** {data['estimated_digital_monthly']}")
+    st.write(f"• **Active Programmatic Asset Footprint:** {data['meta_ad_count']}")
+    st.write(f"• **Search & Placement Automation Channels:** {data['google_ad_types']}")
+    st.write(f"• **Data Analytics Infrastructure Found:** {data['pixel_detections']}")
+    st.write(f"• ⚠️ **Market Share Erosion Risk:** {data['competitive_threat']}")
+    st.write(f"• 💡 **Creative Asset Gap:** {data['creative_gap']}")
     st.markdown("</div>", unsafe_allow_html=True)
     
     # 2. Strategy & Pitch Text Blocks
-    st.markdown("### 🎯 Data-Backed Pitch Strategy")
+    st.markdown("### 🎯 Consultative Account Strategy")
     st.info(f"**The Valid Business Reason (VBR):**\n\n{data['vbr_statement']}")
-    st.error(f"**Identified Digital Vulnerability:**\n\n{data['vulnerability']}")
+    st.error(f"**Identified Operational Inefficiency:**\n\n{data['vulnerability']}")
     
     # 3. Outreach Copy Block
     st.markdown("### 📨 Automated Executive Outreach Script")
@@ -143,28 +149,27 @@ if submit_button:
     
     # 4. Presentation Slides Content
     st.markdown("---")
-    st.markdown("### 📊 Automated Multi-Tactical Pitch Presentation Content")
-    st.write(f"**Recommended Cross-Platform Allocation:** {data['recommended_mix']}")
-    st.caption("Copy these blocks directly into your PowerPoint deck to pitch a direct, non-agency account:")
+    st.markdown("### 📊 Executive Presentation Content Architecture")
+    st.write(f"**Proposed Marketing Capital Reallocation Mix:** {data['recommended_mix']}")
+    st.caption("Utilize these structured business cases directly inside your presentation deck to execute a direct consultative sale:")
     
     # Slide 1
     st.markdown("<div class='slide-red'>", unsafe_allow_html=True)
-    st.markdown("**SLIDE 1: The Digital Bottleneck (Why Only Using Digital Fails)**")
+    st.markdown("**SLIDE 1: The Digital Bottleneck (Diminishing Marginal Returns in Auction Environments)**")
     for bullet in data['slide_1_bullets']:
         st.markdown(f"❌ {bullet}")
     st.markdown("</div>", unsafe_allow_html=True)
         
     # Slide 2
     st.markdown("<div class='slide-green'>", unsafe_allow_html=True)
-    st.markdown("**SLIDE 2: The Multiplier Effect (Why Broadcast + Digital Wins)**")
+    st.markdown("**SLIDE 2: The Portfolio Effect (Stabilizing Blended Acquisition Costs via Diversified Authority)**")
     for bullet in data['slide_2_bullets']:
         st.markdown(f"📈 {bullet}")
     st.markdown("</div>", unsafe_allow_html=True)
         
     # Slide 3
     st.markdown("<div class='slide-blue'>", unsafe_allow_html=True)
-    st.markdown("**SLIDE 3: The Multi-Platform Blueprint (The Tactical Mix)**")
+    st.markdown("**SLIDE 3: The Efficiency Blueprint (Capital Reallocation and Margin Protection)**")
     for bullet in data['slide_3_bullets']:
         st.markdown(f"🛠️ {bullet}")
     st.markdown("</div>", unsafe_allow_html=True)
-

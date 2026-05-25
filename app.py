@@ -140,10 +140,10 @@ mock_database = {
         "recommended_mix": "50% Market Authority Baselines (Mass Media) | 30% Mid-Funnel Localized Geotargeting | 20% Premium Digital Integration",
         "email_subject": "Stabilizing City Furniture's customer acquisition costs and protecting product margins",
         "email_body": "Hi Team City Furniture,\n\nI’ve been reviewing City Furniture’s regional customer acquisition footprint. Our enterprise analytics dashboard flags that your current digital pipeline is heavily leveraged within automated ad auctions, managing roughly 84 active creative variations across standard channels.\n\nWhile this model efficiently captures low-hanging demand, it introduces a severe financial vulnerability: national competitors have increased local auction bids by 54% this quarter, driving your customer acquisition costs (CAC) up an estimated 41% YoY and putting pressure on net operating margins.\n\nOur cross-platform financial data demonstrates that regional retailers who anchor their digital acquisition engines with a broad-market authority baseline reduce overall digital CAC by 21%. This approach shifts your budget away from volatile, reactive bidding environments and locks in a predictable market share baseline.\n\nI have put together a 3-slide operational blueprint detailing how this mix adjustment will stabilize your acquisition costs this quarter. Do you have 10 minutes this Thursday at 2 PM for a brief, business-level look at the numbers?\n\nBest,\n[Account Executive Name]",
-        "slide_1_bullets": [
-            "The Capital Inefficiency: Over-allocating budget to digital ad auctions has exposed City Furniture to a 41% YoY increase in customer acquisition costs (CAC).",
-            "Auction Vulnerability: National corporate spenders have inflated regional search engine bidding costs by 54%, eating into product net margins.",
-            "Margin Dilution: Heavy reliance on price-cut digital creative signals to consumers that the brand relies on continuous discounting rather than intrinsic value."
+                "slide_1_bullets": [
+            "Digital Inflation: EcoRest is absorbing a 38% YoY increase in Meta/Google acquisition costs.",
+            "Keyword Conquesting: Competitors are outbidding EcoRest by 42% on high-intent local search phrases.",
+            "Creative Bottleneck: 34 active Meta ads rely entirely on static testimonials, ignoring screen-based video storytelling."
         ],
         "slide_2_bullets": [
             "The Market Shield: Re-establishing broad-market brand equity builds a proprietary consumer consideration pipeline outside of ad platforms.",

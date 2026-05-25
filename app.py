@@ -114,7 +114,7 @@ prospect_url = st.text_input(
 )
 
 # Button Layout alignment
-btn_col1, btn_col2, _ = st.columns()
+btn_col1, btn_col2, _ = st.columns(3)
 with btn_col1:
     if st.button("Generate Strategic Financial Briefing", type="primary"):
         st.session_state.submitted = True

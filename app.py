@@ -9,17 +9,13 @@ import io
 st.set_page_config(layout="wide", page_title="Prospecting AI", page_icon="📡")
 st.markdown("""
 <style>
-div[data-baseweb="textarea"] textarea {
+textarea:disabled, input:disabled {
     color: #111827 !important;
     -webkit-text-fill-color: #111827 !important;
     opacity: 1 !important;
 }
-
-div[data-baseweb="textarea"] textarea:disabled {
-    color: #111827 !important;
-    -webkit-text-fill-color: #111827 !important;
-    opacity: 1 !important;
-}
+</style>
+""", unsafe_allow_html=True)
 </style>
 """, unsafe_allow_html=True)
 </style>

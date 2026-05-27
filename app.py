@@ -43,7 +43,7 @@ def create_pptx_deck(data, clean_url):
     title_box = title_slide.shapes.add_textbox(Inches(1.0), Inches(2.2), Inches(11.333), Inches(1.5))
     tf_title = title_box.text_frame
     p_title = tf_title.paragraphs[0]
-    p_title.text = "📡 OMNIPULSE AI — ACCOUNT BRIEFING"
+    p_title.text = "📡 ShareShift AI — Digital-to-Linear"
     p_title.font.size = Pt(40)
     p_title.font.bold = True
     p_title.font.color.rgb = RGBColor(255, 255, 255) # Pure White
@@ -238,19 +238,19 @@ def create_pptx_deck(data, clean_url):
     return binary_output
 
 # Top Header Layout
-st.markdown("<p class='main-title'>📡 OMNIPULSE AI</p>", unsafe_allow_html=True)
-st.markdown("<p class='subtitle'>The Official Media Sales Intelligence Platform — Powered by Enterprise Data & Elvex Flows</p>", unsafe_allow_html=True)
+st.markdown("<p class='main-title'>📡 PROSPECTING TOOL FOR SELLERS AI</p>", unsafe_allow_html=True)
+st.markdown("<p class='subtitle'>Graham Media Sales Intelligence Platform — Powered by Enterprise Data & Spark</p>", unsafe_allow_html=True)
 
 # Sidebar System Navigation
 st.sidebar.markdown("### 🖥️ Platform Controls")
 st.sidebar.success("● Core Engine: Connected")
-st.sidebar.success("### 🧠 Elvex Workflow Intelligence Nodes")
+st.sidebar.success("### 🧠 Spark Workflow Intelligence Nodes")
 st.sidebar.info("✔ Web Scraper Node [Active]")
 st.sidebar.info("✔ Cross-Platform Grounding Database [Active]")
 st.sidebar.info("✔ Business Rule Formulation Persona [Active]")
 st.sidebar.markdown("---")
 st.sidebar.markdown("**Demo Input Mapping:**")
-st.sidebar.write("• Type **'cityfurniture'** for South Florida regional retail intelligence.")
+st.sidebar.write("• Type **'cityfurniture'** for Central Florida regional retail intelligence.")
 st.sidebar.write("• Type **'ecorest'** for premium DTC mattress metrics.")
 
 # Session State Initialization
@@ -259,10 +259,10 @@ if "submitted" not in st.session_state:
 
 # Performance Tickers
 t1, t2, t3, t4 = st.columns(4)
-t1.metric(label="Average Cross-Platform CAC Drop", value="-24%")
+t1.metric(label="Average Cross-Platform Customer Acquisition Cost Drop", value="-24%")
 t2.metric(label="Multi-Screen Conversion Lift", value="3.2x")
-t3.metric(label="Showroom Foot Traffic Lift", value="+22%")
-t4.metric(label="Elvex Processing Time", value="1.2 Sec")
+t3.metric(label=" Foot Traffic Lift", value="+22%")
+t4.metric(label="Spark Processing Time", value="1.2 Sec")
 
 st.markdown("###")
 
@@ -273,7 +273,7 @@ if "url_input" not in st.session_state:
     st.session_state.url_input = "https://cityfurniture.com"
 
 prospect_url = st.text_input(
-    "Input Target Prospect Website URL:", 
+    "Input Prospect's Website URL:", 
     value=st.session_state.url_input,
     key="url_box"
 )
@@ -281,7 +281,7 @@ prospect_url = st.text_input(
 # Button Layout alignment
 btn_col1, btn_col2, _ = st.columns(3)
 with btn_col1:
-    if st.button("Generate Prospective Customer Research & VBR", type="primary"):
+    if st.button("Create Prospect Report", type="primary"):
         st.session_state.submitted = True
 with btn_col2:
     if st.button("Reset Form"):
@@ -289,13 +289,13 @@ with btn_col2:
         st.session_state.url_input = ""
         st.rerun()
 
-# Elvex-Enriched Strategy Database with Full Dark Funnel Suite Included
+# Full Dark Funnel Audit
 mock_database = {
     "cityfurniture": {
-        "prospect_name": "CITY Furniture",
+        "prospect_name": "City Furniture",
         "vertical": "B2C Retail & Home Goods / Regional Chain",
         "corporate_intel": "CEO: Andrew Koenig | HQ: Tamarac, FL | Annual Rev: \$919.5M",
-        "estimated_digital_monthly": "\$250,000 - \$400,000 (Estimated Scale Spend Across South Florida Market)",
+        "estimated_digital_monthly": "\$250,000 - \$400,000 (Estimated Scale Spend Across Central Florida Market)",
         "meta_ad_count": "High-Volume Crowded Auctions (Meta, Google PMax, Programmatic Display)",
         "google_ad_types": "Google Performance Max (PMax), Local Inventory Ads, YouTube Pre-Roll",
         "pixel_detections": "Meta Advanced Conversion API, Google Floodlight, Criteo Retargeting Tag",
@@ -305,8 +305,8 @@ mock_database = {
         "vbr_statement": "Verified cross-platform retail tracking confirms that anchoring localized digital search spend with high-frequency daytime and local news broadcast media blocks drops blended digital Customer Acquisition Cost (CAC) by 24% while driving an immediate 15% surge in high-intent organic brand searches.",
 
         "recommended_mix": "Convergent Mix: 50% Mass Local Linear TV Authority Layers | 30% Hyper-Targeted Connected TV | 20% Search/Social Retargeting Shield",
-        "email_subject": "Optimizing CITY Furniture's customer acquisition costs and showroom foot traffic by 22%",
-        "email_body": "Hi Team CITY Furniture,\n\nI’ve been tracking your market footprint across South Florida. Our enterprise intelligence analytics engine flags that your digital acquisition layer is heavily leveraged within automated ad auctions, facing intense local keyword conquesting from national scale competitors like Wayfair and Ashley.\n\nWhile your e-commerce retargeting captures immediate intent, a digital-only approach leaves you vulnerable: auction competition is inflating your acquisition costs, and average display ad dwell time has dropped below 1.5 seconds.\n\nOur cross-platform data reveals that regional retailers who anchor their search and social engines with structured daytime and local news media blocks create an insulation layer that reduces digital CAC by 24%, while triggering a 22% increase in verified showroom foot traffic.\n\nI’ve mapped out a 3-slide efficiency blueprint showing how a convergent media allocation will protect CITY Furniture's product margins this quarter. Do you have 10 minutes this Thursday at 2 PM to look over the metrics?\n\nBest,\n[Account Executive Name]",
+        "email_subject": "Optimizing City Furniture's customer acquisition costs and showroom foot traffic by 22%",
+        "email_body": "Hi Team City Furniture,\n\nI’ve been tracking your market footprint across Central. Our enterprise intelligence analytics engine flags that your digital acquisition layer is heavily leveraged within automated ad auctions, facing intense local keyword conquesting from national scale competitors like Wayfair and Ashley.\n\nWhile your e-commerce retargeting captures immediate intent, a digital-only approach leaves you vulnerable: auction competition is inflating your acquisition costs, and average display ad dwell time has dropped below 1.5 seconds.\n\nOur cross-platform data reveals that regional retailers who anchor their search and social engines with structured daytime and local news media blocks create an insulation layer that reduces digital CAC by 24%, while triggering a 22% increase in verified showroom foot traffic.\n\nI’ve mapped out a 3-slide efficiency blueprint showing how a convergent media allocation will protect CITY Furniture's product margins this quarter. Do you have 10 minutes this Thursday at 2 PM to look over the metrics?\n\nBest,\n[Account Executive Name]",
         "slide_1_bullets": [
             "The Auction Trap: Bidding directly against multi-billion dollar national conglomerates on hyper-crowded search keywords.",
             "Margin Pressure: Digital acquisition costs (CAC) are rising as local programmatic auction bids inflate across Florida markets.",
@@ -345,7 +345,7 @@ mock_database = {
         ],
         "slide_2_bullets": [
             "The Halo Effect: Daytime broadcast presence drives immediate mobile/desktop organic brand searches.",
-            "CAC Reduction: Proven 24% decrease in digital acquisition costs by stabilizing competitive auction dependency.",
+            "Customer Acquisition Cost Reduction: Proven 24% decrease in digital acquisition costs by stabilizing competitive auction dependency.",
             "Audience Capture: Reaching premium 35-64 homeowners who own 80% of local premium home assets."
         ],
         "slide_3_bullets": [
@@ -370,7 +370,7 @@ if st.session_state.submitted:
     else:
         data = mock_database["cityfurniture"]
         
-    # --- Live Elvex Injection Processing Layer ---
+    # --- Live Spark Injection Processing Layer ---
     # Automatically forces mapping fallback strings to clear out tab N/A indicators
     if "journey_awareness" not in data:
         if "city" in clean_url or "furniture" in clean_url:
@@ -430,7 +430,7 @@ if st.session_state.submitted:
         
     st.markdown("</div>", unsafe_allow_html=True)
     
-            # NEW ELEMENT: Elvex Dark Funnel Visibility Matrix (Fully Expanded Research Suite)
+            # NEW ELEMENT: Spark Dark Funnel Visibility Matrix (Fully Expanded Research Suite)
     st.markdown("<div class='section-box' style='border-left: 5px solid #7C3AED;'>", unsafe_allow_html=True)
     st.markdown("### 🔮 Elvex Dark Funnel Visibility Matrix")
 
@@ -468,7 +468,7 @@ if st.session_state.submitted:
         st.write("**4. Decision:** Driven by final last-mile confidence. Reassurance indicators regarding tracking windows or damage resolutions are missing at checkout.")
         
     with sub_col2:
-        st.markdown("##### 📉 Identified Operational Leaks & Gaps")
+        st.markdown("##### 📉 Identified Leaks & Gaps")
         st.write("• **Mid-Funnel Content Deficit:** Web assets over-index on product grids but heavily leak traffic on research queries like sectional sizing guides, performance fabric comparisons, and room-planning software.")
         st.write("• **Review Asset Under-Utilization:** Location reviews exist across individual local showrooms but are completely un-packaged into digital ad creative hooks, testimonial reels, or dedicated landing pages.")
         st.write("• **Word-of-Mouth Capture Failure:** Zero systematic triggers or post-delivery referral requests deployed inside the critical 24–72 hour customer satisfaction window.")

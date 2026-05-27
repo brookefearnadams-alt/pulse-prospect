@@ -511,7 +511,7 @@ if st.session_state.submitted:
         st.markdown(f"**4. Decision Phase (Last-Mile Reassurance):**\n*{data.get('journey_decision', 'N/A')}*")
         
     with tab_trust:
-        st.markdown("#### 🛡️ Omni-Channel Brand Trust Optimization Plan")
+        st.markdown("#### 🛡️ Brand Trust Optimization Plan")
         if "trust_plan" in data:
             st.success(data['trust_plan'])
         else:

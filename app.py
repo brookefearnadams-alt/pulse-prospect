@@ -238,7 +238,7 @@ def create_pptx_deck(data, clean_url):
     return binary_output
 
 # Top Header Layout
-st.markdown("<p class='main-title'>📡 PROSPECTING TOOL FOR SELLERS AI</p>", unsafe_allow_html=True)
+st.markdown("<p class='main-title'>📡 PROSPECTING TOOL FOR SELLERS</p>", unsafe_allow_html=True)
 st.markdown("<p class='subtitle'>Graham Media Sales Intelligence Platform — Powered by Enterprise Data & Spark</p>", unsafe_allow_html=True)
 
 # Sidebar System Navigation

@@ -259,7 +259,7 @@ if "submitted" not in st.session_state:
 
 # Performance Tickers
 t1, t2, t3, t4 = st.columns(4)
-t1.metric(label="Average Cross-Platform Customer Acquisition Cost Drop", value="-24%")
+t1.metric(label="Average CAC Cost Drop", value="-24%")
 t2.metric(label="Multi-Screen Conversion Lift", value="3.2x")
 t3.metric(label=" Foot Traffic Lift", value="+22%")
 t4.metric(label="Spark Processing Time", value="1.2 Sec")

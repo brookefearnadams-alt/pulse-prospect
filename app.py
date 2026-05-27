@@ -6,7 +6,7 @@ from pptx.dml.color import RGBColor
 import io
 
 # Page configuration
-st.set_page_config(layout="wide", page_title="OmniPulse AI", page_icon="📡")
+st.set_page_config(layout="wide", page_title="Prospecting AI", page_icon="📡")
 
 # Custom Styles for High Scannability
 st.markdown("""

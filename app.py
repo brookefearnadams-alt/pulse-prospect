@@ -19,7 +19,7 @@ textarea:disabled, input:disabled {
 </style>
 """, unsafe_allow_html=True)
 </style>
-""", unsafe_allow_html=True)
+""", unsafe_allow_html=True)"""
 # Custom Styles for High Scannability
 st.markdown("""
     <style>

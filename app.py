@@ -8,18 +8,14 @@ import io
 # Page configuration
 st.set_page_config(layout="wide", page_title="Prospecting AI", page_icon="📡")
 st.markdown("""
-<style>
-textarea:disabled, input:disabled {
-    color: #111827 !important;
-    -webkit-text-fill-color: #111827 !important;
-    opacity: 1 !important;
-}
-</style>
+    <style>
+        .main-title { 
+            font-size: 36px !important; 
+            font-weight: 800; 
+            color: #1E3A8A; 
+        }
+    </style>
 """, unsafe_allow_html=True)
-</style>
-""", unsafe_allow_html=True)
-</style>
-""", unsafe_allow_html=True)"""
 # Custom Styles for High Scannability
 st.markdown("""
     <style>

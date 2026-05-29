@@ -33,7 +33,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Helper function to generate deep, multi-data PowerPoint presentation arrays (No Email, Max Intel)
-def create_pptx_deck(data, clean_url):
+def create_pptx_deck(data, clean_url):   
     prs = Presentation()
     prs.slide_width = Inches(13.333)
     prs.slide_height = Inches(7.5)
